@@ -1,0 +1,61 @@
+
+@font-face {
+	font-family: 'NotoSansSC';
+	src: local('NotoSansSC'), local('NotoSansSC-Regular-Alphabetic'),
+	url('../fonts/NotoSansSC-Regular-Alphabetic.woff2') format('woff2'),
+	url('../fonts/NotoSansSC-Regular-Alphabetic.woff') format('woff');
+	font-display: swap;
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NotoSansSC';
+	src: local('NotoSansSC'), local('NotoSansSC-Bold-Alphabetic'),
+	url('../fonts/NotoSansSC-Bold-Alphabetic.woff2') format('woff2'),
+	url('../fonts/NotoSansSC-Bold-Alphabetic.woff') format('woff');
+	font-display: swap;
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NotoSansSC';
+	src: local('NotoSansSC'), local('NotoSansSC-Thin-Alphabetic'),
+	url('../fonts/NotoSansSC-Thin-Alphabetic.woff2') format('woff2'),
+	url('../fonts/NotoSansSC-Thin-Alphabetic.woff') format('woff');
+	font-display: swap;
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NotoSansSC';
+	src: local('NotoSansSC'), local('NotoSansSC-Light-Alphabetic'),
+	url('../fonts/NotoSansSC-Light-Alphabetic.woff2') format('woff2'),
+	url('../fonts/NotoSansSC-Light-Alphabetic.woff') format('woff');
+	font-display: swap;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NotoSansSC';
+	src: local('NotoSansSC'), local('NotoSansSC-Black-Alphabetic'),
+	url('../fonts/NotoSansSC-Black-Alphabetic.woff2') format('woff2'),
+	url('../fonts/NotoSansSC-Black-Alphabetic.woff') format('woff');
+	font-display: swap;
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NotoSansSC';
+	src: local('NotoSansSC'), local('NotoSansSC-Medium-Alphabetic'),
+	url('../fonts/NotoSansSC-Medium-Alphabetic.woff2') format('woff2'),
+	url('../fonts/NotoSansSC-Medium-Alphabetic.woff') format('woff');
+	font-display: swap;
+	font-weight: 500;
+	font-style: normal;
+}
+
