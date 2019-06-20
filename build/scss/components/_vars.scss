@@ -1,5 +1,6 @@
 $color-main: #3f5fc6;
-$color-accent: #d1333d;
+$color-accent: #d1333c;
+$colot-font: #161e3d;
 
 @mixin btn {
     display: inline-block;
@@ -8,6 +9,7 @@ $color-accent: #d1333d;
     border: none;
     outline: none;
     text-decoration: none;
+    color: inherit;
     background-color: transparent;
     cursor: default;
 }
@@ -21,6 +23,7 @@ $color-accent: #d1333d;
     box-shadow: none;
     background: none;
     border-radius: 0;
+    color: inherit;
 }
 
 // @mixin pseudo($display: block, $pos: absolute, $content: ''){
