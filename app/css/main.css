@@ -887,6 +887,7 @@ body {
 	-webkit-transform: rotate(315deg);
 	-ms-transform: rotate(315deg);
 	transform: rotate(315deg);
+	margin-top: -.3rem;
 	height: 1.8rem;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(currentColor), to(currentColor)), -webkit-gradient(linear, left top, left bottom, from(currentColor), to(currentColor));
 	background-image: -o-linear-gradient(currentColor, currentColor), -o-linear-gradient(currentColor, currentColor);
@@ -896,9 +897,9 @@ body {
 	background-repeat: no-repeat;
 }
 
-.header__menu-item.header__menu-item_style_button.header__menu-item_has_submenu:hover .header__submenu,
-.header__menu-item.header__menu-item_style_button.header__menu-item_has_submenu:active .header__submenu,
-.header__menu-item.header__menu-item_style_button.header__menu-item_has_submenu[active] .header__submenu {
+.header__menu-item.header__menu-item_has_submenu:hover .header__submenu,
+.header__menu-item.header__menu-item_has_submenu:active .header__submenu,
+.header__menu-item.header__menu-item_has_submenu[active] .header__submenu {
 	visibility: visible;
 	opacity: 1;
 	-webkit-transform: translateY(0);
@@ -971,9 +972,6 @@ body {
 	font-size: 1.6rem;
 	font-weight: 700;
 	letter-spacing: .01em;
-}
-
-.header__submenu-title a {
 	text-decoration: none;
 	color: inherit;
 	-webkit-transition: .3s;
@@ -981,8 +979,9 @@ body {
 	transition: .3s;
 }
 
-.header__submenu-title a:hover,
-.header__submenu-title a:active {
+.header__submenu-title:hover,
+.header__submenu-title:active,
+.header__submenu-title.active {
 	color: #d1333c;
 }
 
@@ -1006,7 +1005,8 @@ body {
 }
 
 .header__submenu-list li a:hover,
-.header__submenu-list li a:active {
+.header__submenu-list li a:active,
+.header__submenu-list li a.active {
 	color: #d1333c;
 }
 
@@ -1140,6 +1140,14 @@ body {
 	.header__menu {
 		position: absolute;
 		z-index: 1;
+		visibility: hidden;
+		opacity: 0;
+		-webkit-transform: translateY(1rem);
+		-ms-transform: translateY(1rem);
+		transform: translateY(1rem);
+		-webkit-transition: .3s;
+		-o-transition: .3s;
+		transition: .3s;
 		left: 0;
 		right: 0;
 		color: #161e3d;
@@ -1151,6 +1159,13 @@ body {
 		-webkit-justify-content: space-between;
 		-ms-flex-pack: justify;
 		justify-content: space-between;
+	}
+	.header__menu[active] {
+		visibility: visible;
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
 	}
 	.header__menu:before {
 		content: '';
@@ -1207,6 +1222,8 @@ body {
 	}
 	.header__submenu {
 		position: static;
+		visibility: visible;
+		opacity: 1;
 		margin: 0 -2.5%;
 		color: #161e3d;
 	}
@@ -1271,6 +1288,7 @@ body {
 	}
 	.header__menu {
 		display: block;
+		padding-top: 4rem;
 	}
 	.header__menu-item {
 		margin: 0;
@@ -1281,12 +1299,20 @@ body {
 	}
 	.header__menu-item a {
 		display: block;
-		padding: 1.5rem 0;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+	.header__menu-item.header__menu-item_style_button[active] {
+		opacity: initial;
+		background: none;
 	}
 	.header__submenu {
 		margin: 0;
 		padding: 0;
 		display: block;
+		-webkit-transition: none;
+		-o-transition: none;
+		transition: none;
 	}
 	.header__submenu-column {
 		width: auto;
@@ -1304,6 +1330,35 @@ body {
 	.header__submenu-title {
 		padding-left: 1.5rem;
 		border-bottom: 1px solid #f1f1f1;
+	}
+	.mobile-menu-accordion[active] > .mobile-menu-accordion__title {
+		color: #d1333c;
+	}
+	.mobile-menu-accordion[active] > .mobile-menu-accordion__title:before {
+		content: '';
+		-webkit-transform: translateY(-25%) rotate(-135deg);
+		-ms-transform: translateY(-25%) rotate(-135deg);
+		transform: translateY(-25%) rotate(-135deg);
+		border-color: #d1333c;
+	}
+	.mobile-menu-accordion__title {
+		position: relative;
+	}
+	.mobile-menu-accordion__title:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translateY(-75%) rotate(45deg);
+		-ms-transform: translateY(-75%) rotate(45deg);
+		transform: translateY(-75%) rotate(45deg);
+		right: 0;
+		width: 1.2rem;
+		height: 1.2rem;
+		border-right: 2px solid #e7e7eb;
+		border-bottom: 2px solid #e7e7eb;
+		-webkit-transition: .3s;
+		-o-transition: .3s;
+		transition: .3s;
 	}
 	.header__submenu-list {
 		margin-top: 0;

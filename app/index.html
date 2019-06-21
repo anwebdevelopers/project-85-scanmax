@@ -37,31 +37,25 @@
 				<div class="header__nav">
 					<button class="header__menu-button">Меню</button>
 					<ul class="header__menu">
-						<li class="header__menu-item header__menu-item_style_button header__menu-item_has_submenu">
-							<a href="#">Каталог</a>
-							<div class="header__submenu">
+						<li class="header__menu-item header__menu-item_style_button header__menu-item_has_submenu mobile-menu-accordion">
+							<a href="#" class="mobile-menu-accordion__title">Каталог</a>
+							<div class="header__submenu mobile-menu-accordion__box">
 								<div class="header__submenu-column">
-									<div class="header__submenu-cell">
-										<div class="header__submenu-title">
-											<a href="#">3D Сканеры</a>
-										</div>
-										<ul class="header__submenu-list">
+									<div class="header__submenu-cell mobile-menu-accordion">
+										<a class="header__submenu-title mobile-menu-accordion__title" href="#">3D Сканеры</a>
+										<ul class="header__submenu-list mobile-menu-accordion__box">
 											<li><a href="#">Мобильные лазерные сканеры</a></li>
-											<li><a href="#">Наземные лазерные сканеры</a></li>
+											<li><a href="#" class="active">Наземные лазерные сканеры</a></li>
 										</ul>
 									</div>
 									<div class="header__submenu-cell">
-										<div class="header__submenu-title">
-											<a href="#">3D Принтеры</a>
-										</div>
+										<a href="#"  class="header__submenu-title">3D Принтеры</a>
 									</div>
 								</div>
 								<div class="header__submenu-column">
-									<div class="header__submenu-cell">
-										<div class="header__submenu-title">
-											<a href="#">GNSS Оборудование</a>
-										</div>
-										<ul class="header__submenu-list">
+									<div class="header__submenu-cell mobile-menu-accordion">
+										<a class="header__submenu-title mobile-menu-accordion__title" href="#">GNSS Оборудование</a>
+										<ul class="header__submenu-list mobile-menu-accordion__box">
 											<li><a href="#">GPS/GNSS приемники</a></li>
 											<li><a href="#">ГИС оборудование</a></li>
 											<li><a href="#">Антенны референцных станций</a></li>
@@ -70,11 +64,9 @@
 									</div>
 								</div>
 								<div class="header__submenu-column">
-									<div class="header__submenu-cell">
-										<div class="header__submenu-title">
-											<a href="#">Тахеометры</a>
-										</div>
-										<ul class="header__submenu-list">
+									<div class="header__submenu-cell mobile-menu-accordion">
+										<a class="header__submenu-title mobile-menu-accordion__title" href="#">Тахеометры</a>
+										<ul class="header__submenu-list mobile-menu-accordion__box">
 											<li><a href="#">Stonex R1</a></li>
 											<li><a href="#">Stonex R2</a></li>
 											<li><a href="#">Stonex R3</a></li>
@@ -84,11 +76,9 @@
 									</div>
 								</div>
 								<div class="header__submenu-column">
-									<div class="header__submenu-cell">
-										<div class="header__submenu-title">
-											<a href="#">Аксессуары</a>
-										</div>
-										<ul class="header__submenu-list">
+									<div class="header__submenu-cell mobile-menu-accordion">
+										<a class="header__submenu-title mobile-menu-accordion__title" href="#">Аксессуары</a>
+										<ul class="header__submenu-list mobile-menu-accordion__box">
 											<li><a href="#">GSM-модемы и антенны</a></li>
 											<li><a href="#">Аккумуляторы</a></li>
 											<li><a href="#">Аксессуары для вех</a></li>
@@ -98,14 +88,10 @@
 								</div>
 								<div class="header__submenu-column">
 									<div class="header__submenu-cell">
-										<div class="header__submenu-title">
-											<a href="#">Программное  обеспечение</a>
-										</div>
+										<a class="header__submenu-title" href="#">Программное  обеспечение</a>
 									</div>
 									<div class="header__submenu-cell">
-										<div class="header__submenu-title">
-											<a href="#">Б/У оборудование</a>
-										</div>
+										<a class="header__submenu-title" href="#">Б/У оборудование</a>
 									</div>
 								</div>
 							</div>
@@ -212,9 +198,9 @@
 	</div>
 
 	<!-- Load Scripts Start -->
-	<!-- <script src="libs/jquery/jquery-3.1.1.min.js" defer></script> -->
+	<script src="libs/jquery-3.4.0/jquery-3.4.0.min.js" defer></script>
 <!--	<script src="js/scripts.js" defer></script>-->
-<!--	<script src="js/common.js" defer></script>-->
+	<script src="js/common.js" defer></script>
 	<!-- Load Scripts End -->
 
 </body>
