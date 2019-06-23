@@ -1,13 +1,13 @@
-document.addEventListener( 'DOMContentLoaded', function( event ) {
+'use strict';
 
-    'use strict';
+document.addEventListener( 'DOMContentLoaded', function( event ) {
 
     let windowWidth = window.innerWidth;
 
     /*******************************************************/
     //MENU
     /*******************************************************/
-    ( function() {
+    ( function( $ ) {
 
         const $elemNav = $( '.header__menu' ),
            $buttonNav = $( '.header__menu-button' );
@@ -33,12 +33,12 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             }
         } );
 
-    } () );
+    } ( jQuery ) );
 
     /*******************************************************/
     //SUBMENU ACCORDION
     /*******************************************************/
-    ( function() {
+    ( function( $ ) {
 
 
 
@@ -82,6 +82,52 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
                 }
             }
         } );
-    } () );
+    } ( jQuery ) );
+
+    ( function( $ ) {
+
+        $( '.header__slider' )
+            // .wrapInner( '<div class="product__slider"></div>' ).find( '.product__slider' )
+            .addClass( 'owl-carousel' ).owlCarousel( {
+            loop: true,
+            items: 1,
+            nav: false,
+            // navText: '',
+            autoplayTimeout: 10000,
+            // autoplay: true,
+            smartSpeed: 1200,
+            // dotsContainer: '.product__thumbs',
+            // animateOut: false,
+            // animateIn: false,
+            //
+            // responsive: {
+            //     0: {
+            //         animateOut: false,
+            //         animateIn: false,
+            //     },
+            //     480: {
+            //         animateOut: 'fadeOut',
+            //         animateIn: 'fadeIn',
+            //
+            //     },
+            //     768: {
+            //
+            //     }
+            // },
+            onInitialize: function( event ) {
+                // $( event.target ).after('<div class="product__thumbs"></div>');
+                $( event.target ).find( '.header__slider-item' ).each( function () {
+                    $( this ).attr( 'data-index', $( this ).index() + 1 );
+                } );
+            },
+            onInitialized: function( event ) {
+                $( event.target ).find( '.owl-item:not(.cloned) .header__slider-img img' ).each( function() {
+                    $( event.target ).find( '.owl-dot' ).eq( $( this ).index( '.owl-item:not( .cloned ) .header__slider-img img' )).html( '<img src="' + $( this ).attr( 'src' ) + '">' );
+                });
+            }
+
+        } );
+
+    } ( jQuery ) );
 
 } );

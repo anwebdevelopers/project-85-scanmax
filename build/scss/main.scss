@@ -207,13 +207,13 @@ body {
 
 //Custom Styles Here
 @import 'components/header.scss';
-
+@import 'components/header-slider.scss';
 
 
 //ALWAYS END
 
 //Load Libs
-//@import 'app/libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css';
+@import '../../app/libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min';
 //@import 'app/libs/magnific-popup/dist/magnific-popup.css';
 //@import 'build/scss/components/magnific-popup.scss';
 @import '../../app/libs/fontawesome-free-5.9.0-web/scss/fontawesome.scss';
