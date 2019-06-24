@@ -25,7 +25,6 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             }
         } );
 
-
         $( document ).on( 'click', function( event ) {
             if ( ! event.target.closest( '.header__menu' ) ) {
                 $buttonNav.removeAttr( 'active' );
@@ -36,11 +35,9 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     } ( jQuery ) );
 
     /*******************************************************/
-    //SUBMENU ACCORDION
+    //MOBILE MENU ACCORDION
     /*******************************************************/
     ( function( $ ) {
-
-
 
         $( window ).on( 'load resize', function( event ) {
 
@@ -68,6 +65,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
 
         $( '.mobile-menu-accordion' ).on( 'click', '.mobile-menu-accordion__title', function( event ) {
+
             if ( window.innerWidth <= 640 ) {
 
                 const $this = $( this );
@@ -84,38 +82,20 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
         } );
     } ( jQuery ) );
 
+    /*******************************************************/
+    //HEADER SLIDER
+    /*******************************************************/
+
     ( function( $ ) {
 
-        $( '.header__slider' )
-            // .wrapInner( '<div class="product__slider"></div>' ).find( '.product__slider' )
-            .addClass( 'owl-carousel' ).owlCarousel( {
+        $( '.header__slider' ).addClass( 'owl-carousel' ).owlCarousel( {
             loop: true,
             items: 1,
             nav: false,
-            // navText: '',
             autoplayTimeout: 10000,
-            // autoplay: true,
+            autoplay: true,
             smartSpeed: 1200,
-            // dotsContainer: '.product__thumbs',
-            // animateOut: false,
-            // animateIn: false,
-            //
-            // responsive: {
-            //     0: {
-            //         animateOut: false,
-            //         animateIn: false,
-            //     },
-            //     480: {
-            //         animateOut: 'fadeOut',
-            //         animateIn: 'fadeIn',
-            //
-            //     },
-            //     768: {
-            //
-            //     }
-            // },
             onInitialize: function( event ) {
-                // $( event.target ).after('<div class="product__thumbs"></div>');
                 $( event.target ).find( '.header__slider-item' ).each( function () {
                     $( this ).attr( 'data-index', $( this ).index() + 1 );
                 } );
@@ -125,9 +105,56 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
                     $( event.target ).find( '.owl-dot' ).eq( $( this ).index( '.owl-item:not( .cloned ) .header__slider-img img' )).html( '<img src="' + $( this ).attr( 'src' ) + '">' );
                 });
             }
-
         } );
 
     } ( jQuery ) );
+
+    /*******************************************************/
+    //ABOUT VIDEO SLIDER
+    /*******************************************************/
+
+    $( '.about__box' ).addClass( 'owl-carousel' ).owlCarousel( {
+        loop: true,
+        items: 3,
+        nav: true,
+        navText: '',
+        dots: false,
+        autoplayTimeout: 5000,
+        autoplay: true,
+        smartSpeed: 1200,
+        // autoHeight: true,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                dots: true
+            },
+            481: {
+                items: 2
+            },
+            // 769: {
+            //     items: 3
+            // },
+            1025: {
+                items: 3
+            },
+            // 993: {
+            //     items: 5
+            // }
+        },
+        // onInitialize: function( event ) {
+        //     $( event.target ).find( '.about__item' ).each( function() {
+        //         $( this ).attr( 'data-item-counter', $( this ).index() + 1 )
+        //     } );
+        // },
+        onInitialized: function( event ) {
+            $( event.target ).prepend( '<div class="about__head"></div>').find( '.about__head' ).prepend( $( event.target ).prev( '.about__title' ) ).append( $( event.target ).find( '.owl-nav' ) );
+            // $( event.target ).prepend( $( '.about__title' ) ).prepend( '<div class="about__title"></div>');
+            // $( event.target ).prepend( '<div class="about__title"><div class="about__counter-current">' + $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' ) + '</div><div class="about__counter-amount"> / ' + ( $( event.target ).find( '.owl-item:not( .cloned )' ).length ) + '</div></div>' );
+        },
+        // onTranslated: function( event ) {
+        //     $( event.target ).find( '.about__counter-current' ).text( $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' ) )
+        // }
+    } );
 
 } );

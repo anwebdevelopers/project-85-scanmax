@@ -76,6 +76,74 @@ body {
 	clear: both;
 }
 
+.button {
+	@include btn;
+	display: inline-flex;
+	vertical-align: middle;
+	align-items: center;
+	padding: 1.5rem 3rem;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: #fff;
+	transition: .3s;
+	&.button_style_transparent {
+		margin-right: 2.5rem;
+		padding-right: 0;
+		border: 1px solid currentColor;
+		.button__icon {
+			height: 1.5rem;
+		}
+		&:hover, &:active {
+			margin-right: 0;
+			padding-right: 1.5rem;
+
+			.button__icon {
+				margin-left: 1rem;
+				margin-right: 0;
+			}
+		}
+		&:active {
+			color: $color-accent;
+			border-color: #fff;
+			background-color: #fff;
+		}
+	}
+}
+
+
+.button__text {
+	flex: 0 0 auto;
+	display: block;
+}
+.button__icon {
+	flex: 0 0 auto;
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	margin-left: 1.5rem;
+	margin-right: -1.5rem;
+
+	transition: inherit;
+	svg {
+		width: 100%;
+		height: auto;
+		max-height: 100%;
+		fill: currentColor;
+
+		transition: inherit;
+	}
+}
+.title {
+	margin: 0;
+	font-size: 3.6rem;
+	font-weight: 700;
+	line-height: 1.5;
+	letter-spacing: .025em;
+	text-transform: uppercase;
+}
 .text {
 	&:not( :first-child ) {
 		margin-top: 6rem;
@@ -205,10 +273,49 @@ body {
     }
 }
 
+@media only screen and (max-width : 1440px) {
+
+}
+
+@media only screen and (max-width : 1280px) {
+	.title {
+		font-size: 3rem;
+	}
+}
+
+@media only screen and (max-width : 1024px) {
+	.title {
+		font-size: 2.4rem;
+	}
+}
+
+@media only screen and (max-width : 768px) {
+	.title {
+		font-size: 2.2rem;
+	}
+}
+
+@media only screen and (max-width : 640px) {
+	.title {
+		font-size: 2rem;
+	}
+}
+
+@media only screen and (max-width : 480px) {
+	.title {
+		font-size: 1.8rem;
+	}
+}
+
+@media only screen and (max-width : 360px) {
+
+}
+
 //Custom Styles Here
 @import 'components/header.scss';
 @import 'components/header-slider.scss';
-
+@import 'components/sale.scss';
+@import 'components/about.scss';
 
 //ALWAYS END
 
@@ -216,5 +323,6 @@ body {
 @import '../../app/libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min';
 //@import 'app/libs/magnific-popup/dist/magnific-popup.css';
 //@import 'build/scss/components/magnific-popup.scss';
+@import '../../app/libs/fancybox/dist/jquery.fancybox';
 @import '../../app/libs/fontawesome-free-5.9.0-web/scss/fontawesome.scss';
 @import '../../app/libs/fontawesome-free-5.9.0-web/scss/brands.scss';

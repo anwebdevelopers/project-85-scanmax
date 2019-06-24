@@ -324,6 +324,7 @@
 
 @media only screen and (max-width : 768px) {
     .header__slider {
+        margin: 15rem 0 10rem 0;
         &.owl-carousel {
             .owl-dots {
                 width: 70%;
@@ -331,6 +332,9 @@
                 .owl-dot {
                     //width: 20%;
                     //margin-right: 5%;
+                    &:before {
+                        padding-top: 0;
+                    }
                     img {
                         display: none;
                     }
@@ -341,7 +345,17 @@
 }
 
 @media only screen and (max-width : 640px) {
-
+    .header__slider {
+        &.owl-carousel {
+            .owl-dots {
+                .owl-dot {
+                    &:before {
+                        font-size: 5rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width : 480px) {
@@ -349,8 +363,12 @@
         &:before {
             display: none;
         }
-        &.owl-carousel {
 
+        padding: 0;
+        margin: 3rem -4.4% 8rem -4.4%;
+
+        &.owl-carousel {
+            width: calc(108.8%);
             .owl-stage-outer {
                 .owl-stage {
                     .owl-item {
@@ -360,7 +378,9 @@
             }
             .owl-dots {
                 width: auto;
-
+                margin: -1px 0 0 0;
+                padding: 2rem 4%;
+                background-color: #fff;
                 .owl-dot {
                     &:before {
                         font-size: 3.6rem;
@@ -379,23 +399,35 @@
         width: auto;
         margin-left: 0;
         animation: none;
-        margin-bottom: -2.5em;
-        max-width: 55%;
+        margin-bottom: -2em;
+
+        padding: 0 4%;
         img {
             position: static;
             top: auto;
             left: auto;
             transform: none;
+            max-width: 65%;
         }
     }
     .header__slider-content {
         flex: 1 0 auto;
         width: auto;
-        margin: 0;
+        margin: 0 -1px;
         padding: 0;
         background-color: #fff;
         transform: none;
         opacity: 1;
+        padding: 3rem 4% 1.5rem 4%;
+    }
+    .header__slider-suptitle {
+        font-size: 1.4rem;
+    }
+    .header__slider-title {
+        font-size: 2.4rem;
+    }
+    .header__slider-text {
+        font-size: 1.4rem;
     }
 }
 
