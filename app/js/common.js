@@ -127,7 +127,8 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
         responsive: {
             0: {
                 items: 1,
-                dots: true
+                dots: true,
+                nav: false,
             },
             481: {
                 items: 2
