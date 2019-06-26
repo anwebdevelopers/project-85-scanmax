@@ -133,12 +133,12 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             481: {
                 items: 2
             },
-            // 769: {
-            //     items: 3
-            // },
-            1025: {
+            769: {
                 items: 3
             },
+            // 1025: {
+            //     items: 3
+            // },
             // 993: {
             //     items: 5
             // }
