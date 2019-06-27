@@ -1,5 +1,6 @@
 .sale {
     margin-top: -11rem;
+    padding-bottom: 7rem;
     position: relative;
     z-index: 1;
 }
@@ -182,6 +183,9 @@
 }
 
 @media only screen and (max-width : 1024px) {
+    .sale {
+        padding-bottom: 5rem;
+    }
     .sale__item-content {
         max-width: calc(85% + 3rem);
 
@@ -273,6 +277,9 @@
 }
 
 @media only screen and (max-width : 480px) {
+    .sale {
+        padding-bottom: 4rem;
+    }
     .sale__item {
         display: block;
         &:hover, &:active {

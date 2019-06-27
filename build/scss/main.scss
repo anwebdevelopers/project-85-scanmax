@@ -183,7 +183,8 @@ body {
 			position: absolute;
 			left: 0;
 			right: 0;
-			top: -5rem;
+			top: 50%;
+			transform: translateY(-50%);
 			font-size: 20rem;
 			font-weight: 700;
 			line-height: .9;
@@ -334,29 +335,56 @@ body {
 @media only screen and (max-width : 1024px) {
 	.title {
 		font-size: 2.4rem;
+		&[ data-text-decor ] {
+			&:before {
+				font-size: 15rem;
+			}
+		}
 	}
+
 }
 
 @media only screen and (max-width : 768px) {
 	.title {
 		font-size: 2.2rem;
+		&[ data-text-decor ] {
+			&:before {
+				font-size: 12rem;
+			}
+		}
 	}
 }
 
 @media only screen and (max-width : 640px) {
 	.title {
 		font-size: 2rem;
+		&[ data-text-decor ] {
+			&:before {
+				font-size: 10rem;
+			}
+		}
 	}
 }
 
 @media only screen and (max-width : 480px) {
 	.title {
 		font-size: 1.8rem;
+		&[ data-text-decor ] {
+			&:before {
+				font-size: 8rem;
+			}
+		}
 	}
 }
 
 @media only screen and (max-width : 360px) {
-
+	.title {
+		&[ data-text-decor ] {
+			&:before {
+				font-size: 6rem;
+			}
+		}
+	}
 }
 
 //Custom Styles Here
@@ -365,6 +393,7 @@ body {
 @import 'components/sale.scss';
 @import 'components/about.scss';
 @import 'components/catalog.scss';
+@import 'components/timeline.scss';
 
 //ALWAYS END
 

@@ -113,49 +113,101 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     //ABOUT VIDEO SLIDER
     /*******************************************************/
 
-    $( '.about__box' ).addClass( 'owl-carousel' ).owlCarousel( {
-        loop: true,
-        items: 3,
-        nav: true,
-        navText: '',
-        dots: false,
-        autoplayTimeout: 5000,
-        autoplay: true,
-        smartSpeed: 1200,
-        // autoHeight: true,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                dots: true,
-                nav: false,
+    ( function( $ ) {
+
+        $( '.about__box' ).addClass( 'owl-carousel' ).owlCarousel( {
+            loop: true,
+            nav: true,
+            navText: '',
+            dots: false,
+            autoplayTimeout: 5000,
+            autoplay: true,
+            smartSpeed: 1200,
+            autoWidth: true,
+            responsiveClass: true,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    dots: true,
+                    nav: false,
+                },
             },
-            481: {
-                items: 2
+
+            onInitialized: function( event ) {
+                $( event.target ).prepend( '<div class="about__head"></div>').find( '.about__head' ).prepend( $( event.target ).prev( '.about__title' ) ).append( $( event.target ).find( '.owl-nav' ) );
             },
-            769: {
-                items: 3
+        } );
+
+    } ( jQuery ) );
+
+    /*******************************************************/
+    //CATALOG MOBILE SLIDER
+    /*******************************************************/
+
+    ( function( $ ) {
+
+        $( window ).on( 'load resize', function( event ) {
+
+            if ( window.innerWidth <= 480 ) {
+
+                $( '.catalog__box' ).addClass( 'owl-carousel' ).owlCarousel( {
+                    loop: true,
+                    items: 1,
+                    nav: false,
+                    dots: true,
+                    autoplayTimeout: 5000,
+                    autoplay: true,
+                    smartSpeed: 1200,
+                    autoWidth: true,
+                    autoplayHoverPause: true,
+                } );
+            } else {
+                $( '.catalog__box' ).trigger( 'destroy.owl.carousel' ).removeClass( 'owl-carousel' );
+            }
+
+        } );
+
+    } ( jQuery ) );
+
+    /*******************************************************/
+    //TIMILINE SLIDER
+    /*******************************************************/
+
+    /*( function( $ ) {
+
+        $( '.timeline__box' ).addClass( 'owl-carousel' ).owlCarousel( {
+            loop: false,
+            nav: false,
+            navText: '',
+            dots: false,
+            autoplay: false,
+            smartSpeed: 600,
+            autoWidth: true,
+            URLhashListener: true,
+
+            onInitialized: function( event ) {
+
+                $( event.target ).prepend( '<div class="timeline__head"><div class="timeline__dots"></div></div>').find( '.timeline__head' ).prepend( $('.timeline__title' ) );
+
+                $( event.target ).find( '.owl-item:not(.cloned) .timeline__item[ data-hash ]' ).each( function() {
+                    $( event.target ).find( '.timeline__dots' ).append( '<a href="#' + $( this ).attr( 'data-hash' ) + '" class="timeline__dot">' + $( this ).attr( 'data-hash' ) + '</a>' );
+                } );
             },
-            // 1025: {
-            //     items: 3
-            // },
-            // 993: {
-            //     items: 5
-            // }
-        },
-        // onInitialize: function( event ) {
-        //     $( event.target ).find( '.about__item' ).each( function() {
-        //         $( this ).attr( 'data-item-counter', $( this ).index() + 1 )
-        //     } );
-        // },
-        onInitialized: function( event ) {
-            $( event.target ).prepend( '<div class="about__head"></div>').find( '.about__head' ).prepend( $( event.target ).prev( '.about__title' ) ).append( $( event.target ).find( '.owl-nav' ) );
-            // $( event.target ).prepend( $( '.about__title' ) ).prepend( '<div class="about__title"></div>');
-            // $( event.target ).prepend( '<div class="about__title"><div class="about__counter-current">' + $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' ) + '</div><div class="about__counter-amount"> / ' + ( $( event.target ).find( '.owl-item:not( .cloned )' ).length ) + '</div></div>' );
-        },
-        // onTranslated: function( event ) {
-        //     $( event.target ).find( '.about__counter-current' ).text( $( event.target ).find( '.owl-item.active [ data-item-counter ]' ).attr( 'data-item-counter' ) )
-        // }
-    } );
+            onTranslated: function( event ) {
+                $( event.target ).find( '.timeline__dot[ href="#' + $( event.target ).find( '.owl-item.active [ data-hash ]' ).attr( 'data-hash' ) + '" ]' ).addClass( 'active' ).siblings( '.timeline__dot' ).removeClass( 'active' );
+
+            }
+
+        } )
+        // .on( 'mousewheel', '.owl-stage', function ( event ) {
+        //     if ( event.deltaY > 0 ) {
+        //         $( '.timeline__box' ).trigger( 'next.owl' );
+        //     } else {
+        //         $( '.timeline__box' ).trigger( 'prev.owl' );
+        //     }
+        //     event.preventDefault();
+        // } );
+
+    } ( jQuery ) );*/
 
 } );
