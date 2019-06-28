@@ -148,7 +148,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
         $( window ).on( 'load resize', function( event ) {
 
-            if ( window.innerWidth <= 480 ) {
+            if ( window.innerWidth <= 481 ) {
 
                 $( '.catalog__box' ).addClass( 'owl-carousel' ).owlCarousel( {
                     loop: true,
@@ -173,41 +173,49 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
     //TIMILINE SLIDER
     /*******************************************************/
 
-    /*( function( $ ) {
+    ( function( $ ) {
 
         $( '.timeline__box' ).addClass( 'owl-carousel' ).owlCarousel( {
             loop: false,
             nav: false,
-            navText: '',
             dots: false,
             autoplay: false,
-            smartSpeed: 600,
+            smartSpeed: 800,
             autoWidth: true,
-            URLhashListener: true,
+            URLhashListener: false,
 
             onInitialized: function( event ) {
 
                 $( event.target ).prepend( '<div class="timeline__head"><div class="timeline__dots"></div></div>').find( '.timeline__head' ).prepend( $('.timeline__title' ) );
 
-                $( event.target ).find( '.owl-item:not(.cloned) .timeline__item[ data-hash ]' ).each( function() {
-                    $( event.target ).find( '.timeline__dots' ).append( '<a href="#' + $( this ).attr( 'data-hash' ) + '" class="timeline__dot">' + $( this ).attr( 'data-hash' ) + '</a>' );
+                $( event.target ).find( '.owl-item:not(.cloned) .timeline__item[ data-slide-id ]' ).each( function() {
+                    $( event.target ).find( '.timeline__dots' ).append( '<button data-dot-id="' + $( this ).attr( 'data-slide-id' ) + '" class="timeline__dot">' + $( this ).attr( 'data-slide-id' ) + '</button>' );
                 } );
-            },
-            onTranslated: function( event ) {
-                $( event.target ).find( '.timeline__dot[ href="#' + $( event.target ).find( '.owl-item.active [ data-hash ]' ).attr( 'data-hash' ) + '" ]' ).addClass( 'active' ).siblings( '.timeline__dot' ).removeClass( 'active' );
 
+                $( event.target ).find( '.timeline__dot[ data-dot-id="' + $( event.target ).find( '.owl-item.active [ data-slide-id ]' ).attr( 'data-slide-id' ) + '" ]' ).addClass( 'active' ).siblings( '.timeline__dot' ).removeClass( 'active' );
+
+                $( event.target ).find( '.timeline__dots' ).on( 'click', '.timeline__dot:not( .active )', function () {
+
+                    $( event.target ).trigger( 'to.owl.carousel', [ $( event.target ).find( '[ data-slide-id="' + $( this ).attr( 'data-dot-id' ) + '" ]' ).closest( '.owl-item' ).index(), 600 ] )
+                } )
+
+            },
+
+            onTranslated: function( event ) {
+
+                $( event.target ).find( '.timeline__dot[ data-dot-id="' + $( event.target ).find( '.owl-item.active [ data-slide-id ]' ).attr( 'data-slide-id' ) + '" ]' ).addClass( 'active' ).siblings( '.timeline__dot' ).removeClass( 'active' );
             }
 
-        } )
-        // .on( 'mousewheel', '.owl-stage', function ( event ) {
-        //     if ( event.deltaY > 0 ) {
-        //         $( '.timeline__box' ).trigger( 'next.owl' );
-        //     } else {
-        //         $( '.timeline__box' ).trigger( 'prev.owl' );
-        //     }
-        //     event.preventDefault();
-        // } );
 
-    } ( jQuery ) );*/
+        } ).on( 'mousewheel', '.owl-stage', function ( event ) {
+
+            ( event.originalEvent.deltaY > 0 ) ? $( '.timeline__box' ).trigger( 'next.owl' ) : $( '.timeline__box' ).trigger( 'prev.owl' );
+
+            event.preventDefault();
+        } );
+
+
+
+    } ( jQuery ) );
 
 } );

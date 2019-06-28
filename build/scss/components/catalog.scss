@@ -1,6 +1,5 @@
 .catalog {
     padding-top: 7rem;
-    overflow: hidden;
 }
 .catalog__container {
     position: relative;
@@ -199,7 +198,8 @@
         display: block;
         &.owl-carousel {
             margin-left: -4.4%;
-            width: 113%;
+            width: 108.8%;
+
             .owl-stage-outer {
                 .owl-stage {
                     display: flex;
