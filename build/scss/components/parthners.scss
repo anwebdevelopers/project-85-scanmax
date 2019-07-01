@@ -1,8 +1,8 @@
-.about {
+.parthners {
     padding: 7rem 0;
     overflow: hidden;
 }
-.about__box {
+.parthners__box {
     margin: 5rem -1rem 0 -1rem;
 
     display: flex;
@@ -23,7 +23,6 @@
             height: 14rem;
             background-color: #f5f5f6;
         }
-
         .owl-stage-outer {
             overflow: visible;
             .owl-stage {
@@ -35,13 +34,17 @@
                     &:not( .active ) {
                         + .owl-item.active {
                             opacity: 0;
+
                         }
                     }
 
-                    .about__item {
+                    .parthners__item {
                         flex: 0 0 auto;
-                        width: 41rem;
+                        width: 19rem;
                         margin: 0 1rem;
+                        img {
+                            width: auto;
+                        }
                     }
                 }
             }
@@ -92,7 +95,7 @@
                 }
             }
         }
-        .about__head {
+        .parthners__head {
             position: absolute;
             z-index: 1;
             left: 2rem;
@@ -102,7 +105,7 @@
             padding: 4rem 3%;
             background-color: #fff;
             box-shadow: -2rem 0 2rem -2rem transparentize(#9b9b9b, .7),
-                        2rem 0 2rem -2rem transparentize(#9b9b9b, .7);
+            2rem 0 2rem -2rem transparentize(#9b9b9b, .7);
 
             &:before {
                 content: '';
@@ -125,131 +128,81 @@
         }
     }
 }
-.about__item {
+.parthners__item {
     text-decoration: none;
-    color: #fff;
 
     flex: 0 0 auto;
-    width: calc(33.3333% - 2rem);
-    min-height: 25rem;
+    width: calc(16.6666% - 2rem);
+    min-height: 18rem;
     margin: 2rem 1rem 0 1rem;
-    padding: 2.5rem 4rem;
-    border-radius: .3rem;
+    padding: 2.5rem;
+    background-color: #fff;
+    box-shadow: 0 1rem 2rem 0 transparentize(#9b9b9b, .9);
     transition: .3s;
 
     &:hover, &:active {
         box-shadow: 0 1rem 2rem 0 transparentize(#9b9b9b, .7);
-        .about__item-img {
-            transform: scale(1.05);
-            &:before {
-                background-color: transparentize(#3f5fc6, .24);
-            }
-        }
-        .about__item-title {
-            &:before {
-                left: -4rem;
-                width: 2rem;
-            }
-        }
     }
 
     position: relative;
     z-index: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    overflow: hidden;
-
-}
-.about__item-img {
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    transition: 2s;
+    align-items: center;
+    justify-content: center;
     img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background-color: transparentize(#1d1c1c, .5);
-        transition: .3s;
-    }
-}
-.about__item-title {
-    margin: 0;
-    //padding-left: 4rem;
+        flex: 0 0 auto;
 
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1.5;
-    letter-spacing: .01em;
-    max-height: 100%;
-    //background-image: linear-gradient($color-accent, $color-accent);
-    //background-position: 1rem 0;
-    //background-size: .5rem 100%;
-    //background-repeat: no-repeat;
-    position: relative;
-    &:before {
-        content: '';
-        position: absolute;
-        left: -2rem;
-        bottom: 0;
-        width: .5rem;
-        min-height: 5rem;
-        height: 100%;
-        border-radius: .25rem;
-        background-color: $color-accent;
-        transition: .3s;
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+
     }
 }
+
 
 @media only screen and (max-width : 1440px) {
 
 }
 
 @media only screen and (max-width : 1280px) {
-    .about__box {
+    .parthners__box {
         &.owl-carousel {
             margin-left: -4.4%;
             width: 108.8%;
             .owl-stage-outer {
                 .owl-stage {
                     .owl-item {
-                        .about__item {
-                            width: 31rem;
+                        .parthners__item {
+                            width: 14rem;
+                            padding: 1.5rem;
                         }
                     }
                 }
             }
-            .about__head {
+            .parthners__head {
                 width: 31rem;
                 margin-left: -2rem;
             }
         }
     }
+    .parthners__item {
+        width: calc(20% - 2rem);
+    }
 }
 
 @media only screen and (max-width : 1024px) {
-    .about {
+    .parthners {
         padding: 5rem 0;
     }
-
+    .parthners__item {
+        width: calc(25% - 2rem);
+    }
 }
 
 @media only screen and (max-width : 768px) {
-    .about__box {
+    .parthners__box {
         &.owl-carousel {
 
             .owl-nav {
@@ -260,11 +213,14 @@
             }
         }
     }
+    .parthners__item {
+        width: calc(33.3333% - 2rem);
+    }
 }
 
 @media only screen and (max-width : 640px) {
 
-    .about__box {
+    .parthners__box {
 
         &.owl-carousel {
             padding: 0;
@@ -281,9 +237,9 @@
                                 opacity: initial;
                             }
                         }
-                        .about__item {
-                            width: 30rem;
-                            min-height: 19rem;
+                        .parthners__item {
+                            //width: 14rem;
+                            min-height: 12rem;
                             margin: 0 1.5rem 0 0;
                         }
                     }
@@ -304,7 +260,6 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 .owl-dot {
-                    outline: none;
                     flex: 0 0 auto;
                     width: 1rem;
                     height: 1rem;
@@ -318,7 +273,7 @@
                     }
                 }
             }
-            .about__head {
+            .parthners__head {
                 position: static;
 
                 left: auto;
@@ -342,10 +297,14 @@
 }
 
 @media only screen and (max-width : 480px) {
-    .about {
+    .parthners {
         padding: 4rem 0;
     }
-
+    .parthners__item {
+        width: calc(50% - 2rem);
+        min-height: 10rem;
+        padding: 1.5rem;
+    }
 }
 
 @media only screen and (max-width : 360px) {

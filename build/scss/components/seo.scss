@@ -1,0 +1,79 @@
+.seo {
+    padding: 12rem 0;
+    color: #fff;
+    background-color: #56585f;
+    background-image: url('../img/bg-seo.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    position: relative;
+    z-index: 1;
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        right: 45%;
+        bottom: 0;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0), transparentize(#161e3d, .5));
+    }
+}
+.seo__box {
+    width: 50%;
+}
+
+@media only screen and (max-width : 1440px) {
+
+}
+
+@media only screen and (max-width : 1280px) {
+    .seo {
+        &:before {
+            right: 35%;
+        }
+    }
+    .seo__box {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width : 1024px) {
+    .seo {
+        padding: 9rem 0;
+        &:before {
+            right: 25%;
+        }
+    }
+    .seo__box {
+        width: 70%;
+    }
+
+}
+
+@media only screen and (max-width : 768px) {
+    .seo {
+        &:before {
+            right: 0;
+        }
+    }
+    .seo__box {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+    .seo {
+        padding: 5rem 0;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+
+}

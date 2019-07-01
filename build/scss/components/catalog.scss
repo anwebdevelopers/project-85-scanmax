@@ -162,7 +162,7 @@
         padding-bottom: 10rem;
     }
     .catalog__item {
-        padding: 2.5rem 2.5% 2rem 2.5%;
+        padding: 2.5rem 2.5rem 2rem 2.5rem;
     }
     .catalog__item-title {
         font-size: 1.8rem;
@@ -184,15 +184,6 @@
 @media only screen and (max-width : 640px) {
     .catalog__container {
         padding-bottom: 6rem;
-    }
-}
-
-@media only screen and (max-width : 480px) {
-    .catalog {
-        padding-top: 4rem;
-    }
-    .catalog__container {
-        padding-bottom: 4rem;
     }
     .catalog__box {
         display: block;
@@ -230,6 +221,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 .owl-dot {
+                    outline: none;
                     flex: 0 0 auto;
                     width: 1rem;
                     height: 1rem;
@@ -249,6 +241,16 @@
         width: auto;
         margin-right: 0;
     }
+}
+
+@media only screen and (max-width : 480px) {
+    .catalog {
+        padding-top: 4rem;
+    }
+    .catalog__container {
+        padding-bottom: 4rem;
+    }
+
 }
 
 @media only screen and (max-width : 360px) {

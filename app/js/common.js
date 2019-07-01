@@ -131,6 +131,10 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
                     dots: true,
                     nav: false,
                 },
+                641: {
+                    dots: false,
+                    nav: true,
+                },
             },
 
             onInitialized: function( event ) {
@@ -148,7 +152,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
         $( window ).on( 'load resize', function( event ) {
 
-            if ( window.innerWidth <= 481 ) {
+            if ( window.innerWidth <= 641 ) {
 
                 $( '.catalog__box' ).addClass( 'owl-carousel' ).owlCarousel( {
                     loop: true,
@@ -161,7 +165,9 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
                     autoWidth: true,
                     autoplayHoverPause: true,
                 } );
+
             } else {
+
                 $( '.catalog__box' ).trigger( 'destroy.owl.carousel' ).removeClass( 'owl-carousel' );
             }
 
@@ -214,7 +220,118 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             event.preventDefault();
         } );
 
+    } ( jQuery ) );
 
+    /*******************************************************/
+    //PUBLICATIONS MOBILE SLIDER
+    /*******************************************************/
+
+    ( function( $ ) {
+
+        $( window ).on( 'load resize', function( event ) {
+
+            if ( window.innerWidth <= 769 ) {
+
+                $( '.publications__section' ).each( function () {
+
+                    $( this ).addClass( 'owl-carousel' ).owlCarousel( {
+                        loop: true,
+                        // items: 1,
+                        nav: false,
+                        dots: true,
+                        autoplayTimeout: 5000,
+                        autoplay: true,
+                        smartSpeed: 1200,
+                        autoWidth: true,
+                        autoplayHoverPause: true,
+                    } );
+
+                } );
+
+            } else {
+
+                $( '.publications__section' ).each( function () {
+                    $( this ).trigger( 'destroy.owl.carousel' ).removeClass( 'owl-carousel' );
+                } );
+            }
+        } );
+
+    } ( jQuery ) );
+
+
+    /*******************************************************/
+    //PARTHNERS SLIDER
+    /*******************************************************/
+
+    ( function( $ ) {
+
+        $( '.parthners__box' ).addClass( 'owl-carousel' ).owlCarousel( {
+            loop: true,
+            nav: true,
+            navText: '',
+            dots: false,
+            autoplayTimeout: 5000,
+            autoplay: true,
+            smartSpeed: 1200,
+            autoWidth: true,
+            responsiveClass: true,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    dots: true,
+                    nav: false,
+                },
+                641: {
+                    dots: false,
+                    nav: true,
+                },
+            },
+
+            onInitialized: function( event ) {
+                $( event.target ).prepend( '<div class="parthners__head"></div>').find( '.parthners__head' ).prepend( $( event.target ).prev( '.parthners__title' ) ).append( $( event.target ).find( '.owl-nav' ) );
+            },
+        } );
+
+    } ( jQuery ) );
+
+
+    /*******************************************************/
+    //TABS
+    /*******************************************************/
+    ( function( $ ) {
+
+        $( '.tabs' ).attr( 'active', '' ).each( function () {
+
+            $( this ).prepend( '<div class="tabs__buttons"></div>' );
+
+            $( this ).find( '.tabs__button' ).appendTo( $( this ).find( '.tabs__buttons' ) ).first().attr( 'active', '' );
+
+            $( this ).find( '.tabs__section' ).not( ':first' ).hide();
+
+            $( this ).find( '.tabs__buttons' ).on('click', '.tabs__button:not( [ active ] )', function() {
+
+                $( this ).attr( 'active', '' ).siblings().removeAttr( 'active' ).closest( '.tabs' ).find( '.tabs__section' ).slideUp(300).eq( $( this ).index() ).slideDown( 300 );
+
+            } );
+
+        } );
+
+    } ( jQuery ) );
+
+
+    /*******************************************************/
+    //PUBLICATIONS TABS
+    /*******************************************************/
+
+    ( function( $ ) {
+
+        $( '.publications__box[ active ]' ).each( function () {
+
+            $( this ).prepend( '<div class="publications__head"></div>' );
+
+            $( this ).find( '.publications__head' ).append( $( this ).prev( '.publications__title' ) ).append( $( this ).find( '.tabs__buttons' ) );
+
+        } );
 
     } ( jQuery ) );
 

@@ -233,8 +233,9 @@ body {
 	}
 }
 .text {
+	line-height: 1.5;
 	&:not( :first-child ) {
-		margin-top: 6rem;
+		margin-top: 5rem;
 	}
 
 	&:after {
@@ -248,18 +249,19 @@ body {
 	}
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 700;
-		// text-transform: uppercase;
-		// color: #3436c0;
+
 	}
 	h1, h2, h3, h4, h5, h6, p, ul, ol, img, blockquote {
-		&:not( [ class*="align-" ] ) {
-			margin-top: 5rem;
+		&:not( [ class*="align-" ] ):not( :first-child ) {
+			margin-top: 2.5rem;
 		}
-		margin-bottom: 5rem;
+		&:not( :last-child ) {
+			margin-bottom: 2.5rem;
+		}
 	}
 	ul,ol {
 		li {
-			margin: 2rem 0 0 0;
+			margin: 1.5rem 0 0 0;
 		}
 	}
 	ul {
@@ -296,11 +298,11 @@ body {
 	}
 	*.align-left {
 		float: left;
-		margin-right: 5rem;
+		margin-right: 3rem;
 	}
 	*.align-right {
 		float: right;
-		margin-left: 5rem;
+		margin-left: 3rem;
 	}
 	*.align-wide {
 		position: relative;
@@ -434,6 +436,12 @@ body {
 @import 'components/about.scss';
 @import 'components/catalog.scss';
 @import 'components/timeline.scss';
+@import 'components/publications.scss';
+@import 'components/parthners.scss';
+@import 'components/seo.scss';
+@import 'components/footer.scss';
+
+
 
 //ALWAYS END
 
