@@ -1,11 +1,12 @@
 .header {
     color: #fff;
     background-color: #0c447c;
-    padding-bottom: 2.5rem;
+    margin-bottom: 17rem;
+    padding-bottom: 1px;
 
     position: relative;
-    z-index: 1;
-    overflow: hidden;
+    z-index: 2;
+    //overflow: hidden;
 }
 .header__bg {
     position: absolute;
@@ -15,6 +16,15 @@
     right: 0;
     bottom: 0;
 
+    overflow: hidden;
+}
+.header__bg-img {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -377,6 +387,10 @@
 }
 
 @media only screen and (max-width : 1280px) {
+    .header {
+        margin-bottom: 7rem;
+
+    }
     .header__head {
         //justify-content: flex-end;
     }
@@ -503,6 +517,10 @@
 }
 
 @media only screen and (max-width : 1024px) {
+    .header {
+        margin-bottom: 5rem;
+
+    }
     .header__logo {
         width: 9rem;
     }
@@ -526,6 +544,7 @@
 }
 
 @media only screen and (max-width : 768px) {
+
     .header__menu-item {
         > a {
             font-size: 1.8rem;
@@ -627,6 +646,10 @@
 }
 
 @media only screen and (max-width : 480px) {
+    .header {
+        margin-bottom: 4rem;
+
+    }
     .header__bg {
         animation: none;
     }

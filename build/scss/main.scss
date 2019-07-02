@@ -431,8 +431,9 @@ body {
 
 //Custom Styles Here
 @import 'components/header.scss';
+@import 'components/header-stick.scss';
 @import 'components/header-slider.scss';
-@import 'components/sale.scss';
+@import 'components/header-sale.scss';
 @import 'components/about.scss';
 @import 'components/catalog.scss';
 @import 'components/timeline.scss';
@@ -440,6 +441,7 @@ body {
 @import 'components/parthners.scss';
 @import 'components/seo.scss';
 @import 'components/footer.scss';
+
 
 
 
