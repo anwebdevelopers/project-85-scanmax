@@ -88,7 +88,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
     ( function( $ ) {
 
-        $( '.header__slider' ).addClass( 'owl-carousel' ).owlCarousel( {
+        $( '.header__slider-box' ).addClass( 'owl-carousel' ).owlCarousel( {
             loop: true,
             items: 1,
             nav: false,

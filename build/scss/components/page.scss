@@ -1,0 +1,19 @@
+.page {
+    margin-top: 4rem;
+    background-color: #fefefe;
+}
+.page__box {
+    display: flex;
+    align-items: flex-start;
+}
+.page__aside {
+    flex: 0 0 auto;
+    width: calc(25% - 4rem);
+    margin-right: 4rem;
+    box-shadow: 0 0 5rem 0 transparentize(#9b9b9b, .8);
+}
+.page__main {
+    flex: 0 0 auto;
+    width: 75%;
+    box-shadow: 0 0 5rem 0 transparentize(#9b9b9b, .8);
+}

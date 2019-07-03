@@ -1,0 +1,192 @@
+
+.popup.fancybox-content {
+    max-width: 51rem;
+    width: 100%;
+    padding: 7rem 6.5rem;
+    background-color: #fff;
+}
+.popup__title {
+    font-size: 3.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+.popup__subtitle {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    a {
+        color: inherit;
+        text-decoration: none;
+        outline: none;
+        background-image: linear-gradient($color-main, $color-main),linear-gradient(currentColor, currentColor);
+        background-size: 0 1px,100% 1px;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        transition: .3s;
+        &:hover, &:active {
+            color: $color-main;
+            background-size: 100% 1px, 100% 1px;
+
+        }
+        &:active {
+            color: $color-accent;
+        }
+    }
+}
+.popup__field {
+    display: block;
+
+
+    margin-top: 3rem;
+    span {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        left: 2rem;
+        bottom: -.5em;
+        padding: 0 .5rem;
+        font-size: 1.4rem;
+        background-color: #fff;
+    }
+    input,
+    textarea {
+        @include input;
+        width: 100%;
+
+        padding: 1.5rem 2rem;
+        // border-bottom: 1px solid currentColor;
+        font-size: 1.6rem;
+        border: 1px solid #e7e7e7;
+        //background-image: linear-gradient($color-accent,$color-accent), linear-gradient(currentColor,currentColor);
+        //background-position: 0 100%;
+        //background-size:0 1px, 100% 1px;
+        //background-repeat: no-repeat;
+        //color: #9497A8;
+        transition: .3s;
+        &:hover, &:focus {
+            //background-size:  100% 1px,100% 1px;
+            border-color: $color-main;
+        }
+    }
+    input {
+        height: 5rem;
+    }
+    textarea {
+        min-height: 13rem;
+        resize: vertical;
+    }
+}
+.popup__check {
+    display: block;
+    margin-top: 3rem;
+    input {
+        display: none;
+        &:checked + span {
+            &:before {
+                transform: rotate(-55deg);
+                border-color: $color-accent;
+                border-width:3px;
+                border-top-color: rgba(0,0,0,0);
+                border-right-color: rgba(0,0,0,0);
+                height: 1.1rem;
+
+            }
+        }
+        &+ span {
+            position: relative;
+            padding-left: 3rem;
+            font-size: 1.4rem;
+            color: #fff;
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: -.16em;
+                width: 1.6rem;
+                height: 1.6rem;
+                border: 1px solid currentColor;
+                transition: .3s;
+            }
+        }
+    }
+}
+.popup__button {
+    margin-top: 3rem;
+    text-align: center;
+    .button {
+        width: 100%;
+        justify-content: center;
+        //color: #000;
+        //background-color: $color-accent;
+        //background-image: linear-gradient(#fff, #fff);
+        &.button_style_transparent {
+            color: $color-accent;
+            width: calc(100% - 2rem);
+        }
+    }
+}
+.popup__text {
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.popup__search {
+    position: relative;
+    .popup__button {
+        margin-top: 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+
+        .button {
+            background-color: rgba(0,0,0,0);
+            width: 5rem;
+            height: 5rem;
+            padding: 1rem;
+            color: #e7e7e7;
+            .button__icon {
+                margin-left: 0;
+            }
+
+            &:hover, &:active {
+                color: $color-main;
+            }
+        }
+        //svg {
+        //    max-width: 100%;
+        //    fill: currentColor;
+        //}
+    }
+}
+@media only screen and (max-width : 1200px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+    .popup__title {
+        font-size: 2.4rem;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .popup.fancybox-content {
+        padding: 5rem 4rem;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+
+}

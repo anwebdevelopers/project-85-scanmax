@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Scanmax</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="preload" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="css/main.css"></noscript>
+</head>
+
+<body>
+
+	<header class="header header_style_page">
+		<div class="header__bg">
+			<div class="header__bg-img" style="background-image: url(img/bg-header-page.jpg);"></div>
+		</div>
+		<div class="container">
+			<div class="header__head">
+				<figure class="header__logo">
+					<a href="index.html">
+						<img src="img/logo.png" alt="">
+					</a>
+				</figure>
+				<div class="header__stick">
+					<a href="#" class="header__stick-link header__stick-link_style_basket" data-count="30"><svg><use href="#icon-basket"></svg></a>
+					<a href="#callback" data-fancybox="callback" class="header__stick-link"><svg><use href="#icon-phone"></svg></a>
+					<a href="#feedback" data-fancybox="feedback" class="header__stick-link"><svg><use href="#icon-pen"></svg></a>
+					<a href="#search" data-fancybox="search" class="header__stick-link"><svg><use href="#icon-loupe"></svg></a>
+				</div>
+				<div class="header__nav">
+					<button class="header__menu-button">Меню</button>
+					<ul class="header__menu">
+						<li class="header__menu-item header__menu-item_style_button header__menu-item_has_submenu mobile-menu-accordion">
+							<a href="catalog.html" class="mobile-menu-accordion__title">Каталог</a>
+							<div class="header__submenu mobile-menu-accordion__box">
+								<div class="header__submenu-column">
+									<div class="header__submenu-cell mobile-menu-accordion">
+										<a class="header__submenu-title mobile-menu-accordion__title" href="#">3D Сканеры</a>
+										<ul class="header__submenu-list mobile-menu-accordion__box">
+											<li><a href="#">Мобильные лазерные сканеры</a></li>
+											<li><a href="#" class="active">Наземные лазерные сканеры</a></li>
+										</ul>
+									</div>
+									<div class="header__submenu-cell">
+										<a href="#"  class="header__submenu-title">3D Принтеры</a>
+									</div>
+								</div>
+								<div class="header__submenu-column">
+									<div class="header__submenu-cell mobile-menu-accordion">
+										<a class="header__submenu-title mobile-menu-accordion__title" href="#">GNSS Оборудование</a>
+										<ul class="header__submenu-list mobile-menu-accordion__box">
+											<li><a href="#">GPS/GNSS приемники</a></li>
+											<li><a href="#">ГИС оборудование</a></li>
+											<li><a href="#">Антенны референцных станций</a></li>
+											<li><a href="#">Программное обеспечение</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="header__submenu-column">
+									<div class="header__submenu-cell mobile-menu-accordion">
+										<a class="header__submenu-title mobile-menu-accordion__title" href="#">Тахеометры</a>
+										<ul class="header__submenu-list mobile-menu-accordion__box">
+											<li><a href="#">Stonex R1</a></li>
+											<li><a href="#">Stonex R2</a></li>
+											<li><a href="#">Stonex R3</a></li>
+											<li><a href="#">Аксессуары для тахеометров</a></li>
+											<li><a href="#">ПО для тахеометров</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="header__submenu-column">
+									<div class="header__submenu-cell mobile-menu-accordion">
+										<a class="header__submenu-title mobile-menu-accordion__title" href="#">Аксессуары</a>
+										<ul class="header__submenu-list mobile-menu-accordion__box">
+											<li><a href="#">GSM-модемы и антенны</a></li>
+											<li><a href="#">Аккумуляторы</a></li>
+											<li><a href="#">Аксессуары для вех</a></li>
+											<li><a href="#">Аксессуары для тахеометров</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="header__submenu-column">
+									<div class="header__submenu-cell">
+										<a class="header__submenu-title" href="#">Программное  обеспечение</a>
+									</div>
+									<div class="header__submenu-cell">
+										<a class="header__submenu-title" href="#">Б/У оборудование</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="header__menu-item"><a href="#">Услуги</a></li>
+						<li class="header__menu-item"><a href="#">Применение</a></li>
+						<li class="header__menu-item"><a href="#">Наша комнада</a></li>
+						<li class="header__menu-item"><a href="#">Контакты</a></li>
+					</ul>
+				</div>
+				<div class="header__email">
+					<a href="mailto:info@scanmax.ru">info@scanmax.ru</a>
+				</div>
+				<div class="header__phone">
+					<a href="tel:+74959260845" >+7 (495) 926-08-45</a>
+				</div>
+				<ul class="header__social">
+					<li>
+						<a href="#">
+							<i class="fab fa-youtube"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-instagram"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-twitter"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<ul class="header__breadcrumbs">
+				<li><a href="index.html">Главная</a></li>
+				<li>Каталог</li>
+			</ul>
+			<h1 class="header__title">Каталог оборудования</h1>
+		</div>
+	</header>
+
+	<div class="page">
+		<div class="container">
+			<div class="page__box">
+				<div class="page__aside">
+					<nav class="page__nav">
+						<ul>
+							<li><a href="catalog-part.html">3D Сканеры</a></li>
+							<li><a href="catalog-part.html">3D Принтеры</a></li>
+							<li><a href="catalog-part.html">GNSS Оборудование</a></li>
+							<li><a href="catalog-part.html">Тахеометры</a></li>
+							<li><a href="catalog-part.html">Аксессуары</a></li>
+							<li><a href="catalog-part.html">Программное обеспечение</a></li>
+							<li><a href="catalog-part.html">Б/У оборудование</a></li>
+							<li><a href="catalog-part.html">Акции</a></li>
+						</ul>
+					</nav>
+				</div>
+
+				<main class="page__main">
+					<div class="catalog">
+						<div class="catalog__box">
+							<div class="catalog__item">
+								<figure class="catalog__item-img">
+									<img src="img/img-catalog-1.png" alt="">
+								</figure>
+								<figure class="catalog__item-icon">
+									<img src="img/icon-catalog-1.svg" alt="">
+								</figure>
+								<h3 class="catalog__item-title">3D Принтеры</h3>
+								<div class="catalog__item-text"></div>
+								<div class="catalog__item-button">
+									<a href="#" class="button">
+										<span class="button__text">Перейти</span>
+										<span class="button__icon">
+								<svg><use href="#icon-arrow-left"/></svg>
+							</span>
+									</a>
+								</div>
+							</div>
+							<div class="catalog__item">
+								<figure class="catalog__item-img">
+									<img src="img/img-catalog-2.png" alt="">
+								</figure>
+								<figure class="catalog__item-icon">
+									<img src="img/icon-catalog-2.svg" alt="">
+								</figure>
+								<h3 class="catalog__item-title">GNSS Оборудование</h3>
+								<div class="catalog__item-text">GPS/GNSS приемники, <br>ГИС оборудование, <br>антенны референцных станций</div>
+								<div class="catalog__item-button">
+									<a href="#" class="button">
+										<span class="button__text">Перейти</span>
+										<span class="button__icon">
+								<svg><use href="#icon-arrow-left"/></svg>
+							</span>
+									</a>
+								</div>
+							</div>
+							<div class="catalog__item">
+								<figure class="catalog__item-img">
+									<img src="img/img-catalog-3.png" alt="">
+								</figure>
+								<figure class="catalog__item-icon">
+									<img src="img/icon-catalog-3.svg" alt="">
+								</figure>
+								<h3 class="catalog__item-title">Тахеометры</h3>
+								<div class="catalog__item-text">Stonex R1-3, аксессуары <br>для тахеометров, ПО </div>
+								<div class="catalog__item-button">
+									<a href="#" class="button">
+										<span class="button__text">Перейти</span>
+										<span class="button__icon">
+								<svg><use href="#icon-arrow-left"/></svg>
+							</span>
+									</a>
+								</div>
+							</div>
+							<div class="catalog__item">
+								<figure class="catalog__item-img">
+									<img src="img/img-catalog-4.png" alt="">
+								</figure>
+								<figure class="catalog__item-icon">
+									<img src="img/icon-catalog-4.svg" alt="">
+								</figure>
+								<h3 class="catalog__item-title">Аксессуары</h3>
+								<div class="catalog__item-text">GSM-модемы и антенны, <br>АКБ для вех и тахеометров</div>
+								<div class="catalog__item-button">
+									<a href="#" class="button">
+										<span class="button__text">Перейти</span>
+										<span class="button__icon">
+								<svg><use href="#icon-arrow-left"/></svg>
+							</span>
+									</a>
+								</div>
+							</div>
+							<div class="catalog__item">
+								<figure class="catalog__item-img">
+									<img src="img/img-catalog-5.png" alt="">
+								</figure>
+								<figure class="catalog__item-icon">
+									<img src="img/icon-catalog-5.svg" alt="">
+								</figure>
+								<h3 class="catalog__item-title">Программное обеспечение</h3>
+								<div class="catalog__item-text"></div>
+								<div class="catalog__item-button">
+									<a href="#" class="button">
+										<span class="button__text">Перейти</span>
+										<span class="button__icon">
+								<svg><use href="#icon-arrow-left"/></svg>
+							</span>
+									</a>
+								</div>
+							</div>
+							<div class="catalog__item">
+								<figure class="catalog__item-img">
+									<img src="img/img-catalog-6.png" alt="">
+								</figure>
+								<figure class="catalog__item-icon">
+									<img src="img/icon-catalog-6.svg" alt="">
+								</figure>
+								<h3 class="catalog__item-title">Б/у оборудование</h3>
+								<div class="catalog__item-text"></div>
+								<div class="catalog__item-button">
+									<a href="#" class="button">
+										<span class="button__text">Перейти</span>
+										<span class="button__icon">
+								<svg><use href="#icon-arrow-left"/></svg>
+							</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+
+	</div>
+
+	<section class="seo">
+		<div class="container">
+			<div class="seo__box">
+				<div class="seo__content text">
+					<h2>Seo-текст</h2>
+					<h3>Подзаголовок</h3>
+					<p>Возможность нахождения поисковых ключей в тексте и определения их количества полезна как для написания нового текста, так и для оптимизации уже существующего.
+						Расположение ключевых слов по группам и по частоте сделает навигацию по ключам
+						удобной и быстрой. Сервис также найдет и морфологические варианты ключей,
+						которые выделятся в тексте при нажатии на нужное ключевое слово. Возможность
+						нахождения поисковых ключей в тексте и определения их количества полезна
+						как для на писания нового текста, так и для оптимизации уже существующего. </p>
+					<p>Расположение ключевых слов по группам и по частоте сделает навигацию по ключам
+						удобной и быстрой. Сервис также найдет и морфологические варианты ключей,
+						которые выделятся в тексте при нажатии на нужное ключевое слово. Возможность
+						нахождения поисковых ключей в тексте и определения их количества полезна
+						как для написания нового текста, так и для оптимизации уже существующего.
+						Расположение ключевых слов по группам и по частоте сделает навигацию по ключам
+						удобной и быстрой. </p>
+					<p>Сервис также найдет и морфологические варианты ключей, которые выделятся в тексте при нажатии на нужное ключевое слово.Возможность нахождения поисковых ключей
+						в тексте и определения их количества полезна как для написания нового текста,
+						так и для оптимизации уже существующего. Расположение ключевых слов по группам
+						и по частоте сделает навигацию по ключам удобной и быстрой. Сервис также найдет
+						и морфологические варианты ключей, которые выделятся в тексте при нажатии
+						на нужное ключевое слово.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__box">
+				<div class="footer__nav">
+					<div class="footer__nav-item">
+						<div class="footer__nav-title">Каталог</div>
+						<ul class="footer__nav-list">
+							<li><a href="#">3D Принтеры</a></li>
+							<li><a href="#">GNSS Оборудование</a></li>
+							<li><a href="#">Тахеометры</a></li>
+							<li><a href="#">Аксессуары</a></li>
+							<li><a href="#">Программное обеспечение</a></li>
+							<li><a href="#">БУ оборудование</a></li>
+						</ul>
+					</div>
+					<div class="footer__nav-item">
+						<div class="footer__nav-title">Услуги </div>
+						<ul class="footer__nav-list">
+							<li><a href="#">3D Сканирование</a></li>
+							<li><a href="#">3D Печать</a></li>
+							<li><a href="#">3D Моделирование</a></li>
+							<li><a href="#">Поверка оборудования</a></li>
+							<li><a href="#">Аренда</a></li>
+							<li><a href="#">Обучение</a></li>
+							<li><a href="#">Ремонт</a></li>
+						</ul>
+					</div>
+					<div class="footer__nav-item">
+						<div class="footer__nav-title">Применения</div>
+						<ul class="footer__nav-list">
+							<li><a href="#">Горная промышленность</a></li>
+							<li><a href="#">Нефтегазовая отрасль</a></li>
+							<li><a href="#">Архитектура и памятники истории</a></li>
+							<li><a href="#">Строительство и ремонт</a></li>
+							<li><a href="#">Промышленное строительство</a></li>
+							<li><a href="#">Земельный кадастр</a></li>
+							<li><a href="#">Инженерные изыскания</a></li>
+						</ul>
+					</div>
+					<div class="footer__nav-item">
+						<div class="footer__nav-title">Контакты</div>
+						<ul class="footer__nav-list">
+							<li><a href="#">О компании</a></li>
+							<li><a href="#">Новости</a></li>
+							<li><a href="#">Сертификаты</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer__contacts">
+					<figure class="footer__logo">
+						<img src="img/logo-footer.png" alt="">
+					</figure>
+
+					<div class="footer__phone">
+						<a href="tel:+74959260845" >+7 (495) 926-08-45</a>
+					</div>
+					<div class="footer__email">
+						<a href="mailto:info@scanmax.ru">info@scanmax.ru</a>
+					</div>
+					<address class="footer__address">117545, г Москва, ул. Дорожная, д.8, корп.1, офис.  К1-313, этаж 3</address>
+					<ul class="footer__social">
+						<li>
+							<a href="#">
+								<i class="fab fa-youtube"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fab fa-instagram"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fab fa-twitter"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__bottom">
+					<div class="footer__copy">© ScanMax, 2014-2019</div>
+					<div class="footer__author">Дизайн и разработка сайта — <a href="#">Beltechsoft</a></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div hidden>
+
+		<form id="callback" class="popup">
+			<div class="popup__title">закажите обратный звонок </div>
+			<label class="popup__field">
+				<span>Имя</span>
+				<input type="text" placeholder="Максим Николаевич">
+			</label>
+			<label class="popup__field">
+				<span>Телефон</span>
+				<input type="tel" placeholder="+7 (123) 321-21-21">
+			</label>
+			<div class="popup__text">Нажимая кнопку «Отправить» я  даю согласие
+				на обработку персональных данных</div>
+			<div class="popup__button">
+				<button type="submit" class="button">
+					<span class="button__text">перезвоните мне</span>
+					<span class="button__icon">
+						<svg><use href="#icon-arrow-left"></use></svg>
+					</span>
+				</button>
+			</div>
+		</form>
+
+		<form id="feedback" class="popup">
+			<div class="popup__title">Напишите нам и мы ответим</div>
+			<label class="popup__field">
+				<span>Имя</span>
+				<input type="text" placeholder="Максим Николаевич">
+			</label>
+			<label class="popup__field">
+				<span>Телефон</span>
+				<input type="tel" placeholder="+7 (123) 321-21-21">
+			</label>
+			<label class="popup__field">
+				<span>Ваше сообщение</span>
+				<textarea placeholder="Оставьте любое сообщение по заказу"></textarea>
+			</label>
+			<div class="popup__text">Нажимая кнопку «Отправить» я  даю согласие
+				на обработку персональных данных</div>
+			<div class="popup__button">
+				<button type="submit" class="button">
+					<span class="button__text">Отправить</span>
+					<span class="button__icon">
+						<svg><use href="#icon-arrow-left"></use></svg>
+					</span>
+				</button>
+			</div>
+		</form>
+
+		<form id="search" class="popup">
+			<div class="popup__title">Что ищем?</div>
+			<div class="popup__search">
+				<label class="popup__field">
+					<span>Ваш запрос</span>
+					<input type="text" placeholder="Например: AC-2">
+				</label>
+				<div class="popup__button">
+					<button type="submit" class="button">
+						<span class="button__icon">
+							<svg><use href="#icon-loupe"/></svg>
+						</span>
+					</button>
+				</div>
+			</div>
+		</form>
+
+		<form id="order" class="popup">
+			<div class="popup__title">ЗАКАЗАТЬ ТОВАР</div>
+			<div class="popup__subtitle">
+				<a href="#">Сканер Leica ScanStation P30</a>
+			</div>
+			<label class="popup__field">
+				<span>Имя</span>
+				<input type="text" placeholder="Максим Николаевич">
+			</label>
+			<label class="popup__field">
+				<span>Телефон</span>
+				<input type="tel" placeholder="+7 (123) 321-21-21">
+			</label>
+			<label class="popup__field">
+				<span>Ваше сообщение</span>
+				<textarea placeholder="Оставьте любое сообщение по заказу"></textarea>
+			</label>
+			<div class="popup__text">Нажимая кнопку «Отправить» я  даю согласие
+				на обработку персональных данных</div>
+			<div class="popup__button">
+				<button type="submit" class="button">
+					<span class="button__text">заказать товар</span>
+					<span class="button__icon">
+						<svg><use href="#icon-arrow-left"></use></svg>
+					</span>
+				</button>
+			</div>
+
+		</form>
+
+		<!--<form id="popup" class="popup">
+			<div class="popup__title">Оставьте заявку на участие</div>
+			<input type="text" class="popup__field" placeholder="Ваше имя">
+			<input type="tel" class="popup__field" placeholder="Ваш телефон">
+			<input type="email" class="popup__field" placeholder="Ваш email">
+			<label class="popup__check">
+				<input type="checkbox">
+				<span>Я согласен с политикой конфиденциальности</span>
+			</label>
+			<div class="popup__button">
+				<button type="submit" class="button">Отправить</button>
+			</div>
+			<div class="popup__text">Обработка персональных данных осуществляется согласно ФЗ РФ от 27 июля 2006 г. № 152-ФЗ</div>
+		</form>-->
+
+		<!-- SVG SPRITE -->
+		<svg xmlns="http://www.w3.org/2000/svg">
+			<symbol id="icon-arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.1 22.1">
+				<path class="st0" d="M37.8,0.3c-0.4-0.4-1.1-0.4-1.6,0c-0.4,0.4-0.4,1.1,0,1.6l8,8H1.1C0.5,10,0,10.4,0,11.1s0.5,1.1,1.1,1.1h43.2
+				l-8,8c-0.4,0.4-0.4,1.2,0,1.6c0.4,0.4,1.2,0.4,1.6,0l10-10c0.4-0.4,0.4-1.1,0-1.6L37.8,0.3z"/>
+			</symbol>
+			<symbol id="icon-loupe"  viewBox="0 0 513.1 512.7">
+				<path d="M501.6,445.8L368.3,312.5c29.8-44.6,40.5-98.1,30.1-150.7C388,109,357.7,63.5,312.9,33.6C268.3,3.7,214.2-6.7,160.8,4.3
+				c-53.5,11-99.1,41.9-128.4,87C3.6,135.8-6.5,188.9,4.1,241C14.8,293,44.9,338,89,367.7c33.3,22.3,72,34.2,112.1,34.2
+				c39.9,0,78.6-11.7,111.8-33.9l133.3,133.3c7.6,7.6,17.7,11.5,27.7,11.5s20.1-3.8,27.7-11.5c7.4-7.4,11.5-17.2,11.5-27.7
+				S509,453.2,501.6,445.8z M384.2,203.9c-1.6,99.2-83.6,179.8-182.8,179.8c-100.7-0.1-182.8-82.2-182.9-182.9
+				c0-99.2,80.7-181.2,179.8-182.8c1,0,2,0,3,0c48.7,0,94.4,19,129.1,53.7C365.9,107.2,385,154.1,384.2,203.9z"/>
+			</symbol>
+			<symbol id="icon-basket" viewBox="0 0 510 510">
+				<path d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306
+				c-2.55,7.65-5.1,17.85-5.1,25.5c0,28.05,22.95,51,51,51h306v-51H163.2c-2.55,0-5.1-2.55-5.1-5.1v-2.551l22.95-43.35h188.7
+				c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408
+				c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z"/>
+			</symbol>
+			<symbol id="icon-phone" viewBox="0 0 477.9 477.9">
+				<path d="M476,409.8l-26,43.3c-5.8,9.8-15.1,17.1-26,20.2c-52.5,14.4-144.2,2.5-283-136.3C2.2,198.1-9.7,106.4,4.7,53.9
+				C7.8,43,15,33.6,24.9,27.9l43.3-26c6-3.6,13.7-1.9,17.6,4l37.5,56.4l31.5,47.3c3.8,5.7,2.5,13.3-2.8,17.6l-38.8,30.2
+				c-11.8,9-15.2,25.4-7.9,38.3l3.1,5.6c10.9,20,24.5,44.9,74,94.4c49.5,49.5,74.4,63,94.4,73.9l5.6,3.1c13,7.3,29.3,3.9,38.3-7.9
+				l30.2-38.8c4.2-5.4,11.9-6.6,17.6-2.8l103.6,69.1C477.9,396,479.6,403.8,476,409.8z"/>
+			</symbol>
+			<symbol id="icon-pen" viewBox="0 0 528.9 526.3">
+				<path d="M328.9,87.8l107.6,107.6L164.1,467.8L56.6,360.2L328.9,87.8z M518.1,61.9l-48-48c-18.5-18.5-48.7-18.5-67.3,0l-46,46
+				l107.6,107.6l53.6-53.6C532.5,99.5,532.5,76.3,518.1,61.9z M0.3,511.4c-2,8.8,6,16.7,14.8,14.6L135,496.9L27.5,389.3L0.3,511.4z"/>
+			</symbol>
+		</svg>
+	</div>
+
+	<!-- Load Scripts Start -->
+	<!--<script src="libs/jquery-3.4.0/jquery-3.4.0.min.js" defer></script>
+	<script src="libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js" defer></script>
+	<script src="libs/fancybox/dist/jquery.fancybox.js" defer></script>-->
+	<script src="js/scripts.js" defer></script>
+	<script src="js/common.js" defer></script>
+	<!-- Load Scripts End -->
+
+</body>
+</html>

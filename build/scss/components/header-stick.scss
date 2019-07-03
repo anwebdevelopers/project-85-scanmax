@@ -1,20 +1,16 @@
 .header__stick {
     position: fixed;
     z-index: 1;
-    left: 50%;
+    right: calc(1% + 1rem);
     top: 25rem;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: calc( 1380px + 8% );
-    padding: 0 4%;
 
+    display: flex;
+    flex-direction: column;
 }
 .header__stick-inner {
     position: absolute;
     top: 0;
-    right: 5%;
-    display: flex;
-    flex-direction: column;
+
 }
 .header__stick-link {
     flex: 0 0 auto;

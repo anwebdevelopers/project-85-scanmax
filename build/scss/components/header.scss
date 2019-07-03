@@ -1,12 +1,17 @@
 .header {
     color: #fff;
-    background-color: #0c447c;
-    margin-bottom: 17rem;
+    margin-bottom: 24rem;
     padding-bottom: 1px;
 
     position: relative;
     z-index: 2;
-    //overflow: hidden;
+    &.header_style_page {
+        margin-bottom: 0;
+        padding-bottom: 2rem;
+        .header__bg {
+            bottom: 0;
+        }
+    }
 }
 .header__bg {
     position: absolute;
@@ -56,12 +61,15 @@
     }
 }
 .header__head {
+    position: relative;
+    z-index: 2;
+}
+.header__head-box {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
 
     position: relative;
-    z-index: 2;
 }
 .header__logo {
     margin: 0;
@@ -381,17 +389,53 @@
         }
     }
 }
+.header__breadcrumbs {
+    padding: 0;
+    list-style: none;
+    margin: 8rem 0 0 0;
 
+    display: flex;
+    flex-wrap: wrap;
+    li {
+        flex: 0 1 auto;
+        font-size: 1.2rem;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        &:not( :last-child ) {
+            &:after {
+                content: '/';
+                margin: 0 1rem;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: .3s;
+            &[href] {
+                opacity: .5;
+            }
+
+            &:hover, &:active {
+                opacity: 1;
+            }
+        }
+    }
+}
+.header__title {
+
+}
 @media only screen and (max-width : 1440px) {
 
 }
 
 @media only screen and (max-width : 1280px) {
     .header {
-        margin-bottom: 7rem;
+        margin-bottom: 9rem;
+    }
+    .header__bg {
 
     }
-    .header__head {
+    .header__head-box {
         //justify-content: flex-end;
     }
     .header__logo {
@@ -518,8 +562,7 @@
 
 @media only screen and (max-width : 1024px) {
     .header {
-        margin-bottom: 5rem;
-
+        margin-bottom: 7rem;
     }
     .header__logo {
         width: 9rem;
@@ -544,6 +587,7 @@
 }
 
 @media only screen and (max-width : 768px) {
+
 
     .header__menu-item {
         > a {
@@ -647,7 +691,7 @@
 
 @media only screen and (max-width : 480px) {
     .header {
-        margin-bottom: 4rem;
+        margin-bottom: 6rem;
 
     }
     .header__bg {

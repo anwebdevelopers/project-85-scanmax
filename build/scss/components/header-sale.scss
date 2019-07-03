@@ -1,5 +1,5 @@
 
-.header__sale {
+.header__sale-box {
     margin-top: 14rem;
     margin-bottom: -17rem;
     display: flex;
@@ -163,7 +163,7 @@
 }
 
 @media only screen and (max-width : 1280px) {
-    .header__sale {
+    .header__sale-box {
         margin: 14rem -4.4% -2rem -4.4%;
     }
     .header__sale-item-content {
@@ -196,9 +196,9 @@
 
 @media only screen and (max-width : 768px) {
 
-    .header__sale {
+    .header__sale-box {
         display: block;
-        margin-bottom: 0;
+        margin-bottom: -1px;
     }
     .header__sale-item {
         width: auto;

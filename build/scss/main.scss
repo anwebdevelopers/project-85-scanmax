@@ -8,29 +8,29 @@
 *:focus:-ms-input-placeholder      {color: transparent}
 
 *::-webkit-input-placeholder {
-	color: #666;
+	color: #e7e7e7;
 	opacity: 1;
 }
 *:-moz-placeholder {
-	color: #666;
+	color: #e7e7e7;
 	opacity: 1;
 }
 *::-moz-placeholder {
-	color: #666;
+	color: #e7e7e7;
 	opacity: 1;
 }
 
 *:-ms-input-placeholder {
-	color: #666;
+	color: #e7e7e7;
 	opacity: 1;
 }
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
-	color: #666;
+	color: #e7e7e7;
 }
 body input:required:valid,
 body textarea:required:valid {
-	color: #666;
+	color: #e7e7e7;
 }
 *,
 *:before,
@@ -199,14 +199,14 @@ body {
 	margin-left: 1.5rem;
 	//margin-right: -1.5rem;
 
-	transition: inherit;
+	transition: .3s;
 	svg {
 		width: 100%;
 		height: auto;
 		max-height: 100%;
 		fill: currentColor;
 
-		transition: inherit;
+		//transition: inherit;
 	}
 }
 .title {
@@ -441,9 +441,9 @@ body {
 @import 'components/parthners.scss';
 @import 'components/seo.scss';
 @import 'components/footer.scss';
+@import 'components/popup.scss';
 
-
-
+@import 'components/page.scss';
 
 //ALWAYS END
 

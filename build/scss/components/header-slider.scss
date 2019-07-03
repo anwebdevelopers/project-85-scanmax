@@ -1,4 +1,8 @@
 .header__slider {
+    overflow: hidden;
+}
+
+.header__slider-box {
     max-width: 1050px;
     margin: 15rem 0 0 0;
     padding: 7rem 0 2rem 0;
@@ -275,7 +279,7 @@
     .header__slider-title {
         font-size: 3.6rem;
     }
-    .header__slider {
+    .header__slider-box {
         &.owl-carousel {
             .owl-dots {
                 width: 60%;
@@ -291,7 +295,7 @@
 }
 
 @media only screen and (max-width : 768px) {
-    .header__slider {
+    .header__slider-box {
         margin: 15rem 0 10rem 0;
         &.owl-carousel {
             .owl-dots {
@@ -313,7 +317,7 @@
 }
 
 @media only screen and (max-width : 640px) {
-    .header__slider {
+    .header__slider-box {
         &.owl-carousel {
             .owl-dots {
                 .owl-dot {
@@ -327,7 +331,7 @@
 }
 
 @media only screen and (max-width : 480px) {
-    .header__slider {
+    .header__slider-box {
         &:before {
             display: none;
         }
