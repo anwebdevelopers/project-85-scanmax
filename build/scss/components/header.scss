@@ -4,7 +4,7 @@
     padding-bottom: 1px;
 
     position: relative;
-    z-index: 2;
+    z-index: 3;
     &.header_style_page {
         margin-bottom: 0;
         padding-bottom: 2rem;
@@ -422,7 +422,10 @@
     }
 }
 .header__title {
-
+    margin: 2.5rem 0 0 0;
+    font-size: 3.6rem;
+    font-weight: 400;
+    letter-spacing: .025em;
 }
 @media only screen and (max-width : 1440px) {
 
@@ -584,6 +587,12 @@
     .header__social {
         display: none;
     }
+    .header__breadcrumbs {
+        margin-top: 8rem;
+    }
+    .header__title {
+        font-size: 3rem;
+    }
 }
 
 @media only screen and (max-width : 768px) {
@@ -707,6 +716,12 @@
         margin: 1.5rem 0 0 11.5rem;
         width: calc(100% - 11.5rem);
         text-align: right;
+    }
+    .header__breadcrumbs {
+        display: none;
+    }
+    .header__title {
+        margin-top: 5rem;
     }
 }
 

@@ -154,7 +154,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
             if ( window.innerWidth <= 641 ) {
 
-                $( '.catalog__box' ).addClass( 'owl-carousel' ).owlCarousel( {
+                $( '.catalog.catalog_style_home .catalog__box' ).addClass( 'owl-carousel' ).owlCarousel( {
                     loop: true,
                     items: 1,
                     nav: false,
@@ -168,7 +168,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
             } else {
 
-                $( '.catalog__box' ).trigger( 'destroy.owl.carousel' ).removeClass( 'owl-carousel' );
+                $( '.catalog.catalog_style_home .catalog__box' ).trigger( 'destroy.owl.carousel' ).removeClass( 'owl-carousel' );
             }
 
         } );
@@ -221,6 +221,16 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
         } );
 
     } ( jQuery ) );
+
+    /*******************************************************/
+    //TIMILINE GALLERY
+    /*******************************************************/
+
+    // $( '[ data-fancybox="timeline-gallery" ]' ).fancybox( {
+    //     thumbs : {
+    //         // autoStart : true
+    //     }
+    // } );
 
     /*******************************************************/
     //PUBLICATIONS MOBILE SLIDER

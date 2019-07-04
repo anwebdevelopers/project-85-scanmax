@@ -157,6 +157,23 @@
     opacity: 0;
     overflow: hidden;
     transition: .8s;
+    .button {
+        color: #fff;
+        border-color: currentColor;
+        .button__icon {
+            //height: 1.5rem;
+            color: currentColor;
+        }
+        &:hover {
+            background: none;
+            border-color: #fff;
+        }
+        &:active {
+            color: $color-accent;
+            border-color: #fff;
+            background-color: #fff;
+        }
+    }
 }
 @media only screen and (max-width : 1440px) {
 

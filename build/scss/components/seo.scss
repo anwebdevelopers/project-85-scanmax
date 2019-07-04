@@ -1,8 +1,8 @@
 .seo {
+    margin-top: 7rem;
     padding: 12rem 0;
     color: #fff;
     background-color: #56585f;
-    background-image: url('../img/bg-seo.jpg');
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -42,6 +42,7 @@
 
 @media only screen and (max-width : 1024px) {
     .seo {
+        margin-top: 5rem;
         padding: 9rem 0;
         &:before {
             right: 25%;
@@ -70,6 +71,7 @@
 
 @media only screen and (max-width : 480px) {
     .seo {
+        margin-top: 4rem;
         padding: 5rem 0;
     }
 }
