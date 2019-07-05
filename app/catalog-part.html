@@ -203,12 +203,17 @@
             </div>
 
             <main class="page__main">
-                <ul class="page__links">
-                    <li><a href="catalog-goods.html">GPS/GNSS приемники</a></li>
-                    <li><a href="catalog-goods.html" class="active">ГИС оборудование</a></li>
-                    <li><a href="catalog-goods.html">Антенны референцных станций</a></li>
-                    <li><a href="catalog-goods.html">Программное обеспечение</a></li>
-                </ul>
+                <div class="page__filter">
+                    <div class="page__filter-box">
+                        <ul class="page__filter-categories">
+                            <li><a href="catalog-goods.html">GPS/GNSS приемники</a></li>
+                            <li><a href="catalog-goods.html" class="active">ГИС оборудование</a></li>
+                            <li><a href="catalog-goods.html">Антенны референцных станций</a></li>
+                            <li><a href="catalog-goods.html">Программное обеспечение</a></li>
+                        </ul>
+                    </div>
+                </div>
+
                 <h2 class="page__title">Gps/gnss приемники </h2>
                 <div class="goods">
                     <div class="goods__box">
@@ -338,6 +343,12 @@
                                 <br><br>– 4G и УКВ модемы, <br>– Bluetooth, Wi-Fi <br>– Горячая замена аккумуляторов <br>– Датчик NFC для быстрой настройки с телефона
                                 <br>– Электронный уровень</div>
                         </div>
+                    </div>
+                </div>
+
+                <h2 class="page__title">ГИС оборудование</h2>
+                <div class="goods">
+                    <div class="goods__box">
                         <div class="goods__item">
                             <a href="card.html" class="goods__item-head">
                                 <div class="goods__item-top">
@@ -466,6 +477,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="page__button">
                     <a href="#" class="button button_style_transparent">
                         <span class="button__text">загрузить еще</span>
@@ -474,15 +486,7 @@
                         </span>
                     </a>
                 </div>
-                <ul class="page__pagination">
-                    <li><a href="#"><svg><use href="#icon-arrow-left"/></svg></a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#" class="active">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#"><svg><use href="#icon-arrow-right"/></svg></a></li>
-                </ul>
+
             </main>
         </div>
     </div>
@@ -605,11 +609,11 @@
 
     <form id="callback" class="popup">
         <div class="popup__title">закажите обратный звонок</div>
-        <label class="popup__field">
+        <label class="popup__field form__field">
             <span>Имя</span>
             <input type="text" placeholder="Максим Николаевич">
         </label>
-        <label class="popup__field">
+        <label class="popup__field form__field">
             <span>Телефон</span>
             <input type="tel" placeholder="+7 (123) 321-21-21">
         </label>
@@ -628,15 +632,15 @@
 
     <form id="feedback" class="popup">
         <div class="popup__title">Напишите нам и мы ответим</div>
-        <label class="popup__field">
+        <label class="popup__field form__field">
             <span>Имя</span>
             <input type="text" placeholder="Максим Николаевич">
         </label>
-        <label class="popup__field">
+        <label class="popup__field form__field">
             <span>Телефон</span>
             <input type="tel" placeholder="+7 (123) 321-21-21">
         </label>
-        <label class="popup__field">
+        <label class="popup__field form__field">
             <span>Ваше сообщение</span>
             <textarea placeholder="Оставьте любое сообщение по заказу"></textarea>
         </label>
@@ -656,7 +660,7 @@
     <form id="search" class="popup">
         <div class="popup__title">Что ищем?</div>
         <div class="popup__search">
-            <label class="popup__field">
+            <label class="popup__field form__field">
                 <span>Ваш запрос</span>
                 <input type="text" placeholder="Например: AC-2">
             </label>
@@ -675,15 +679,15 @@
         <div class="popup__subtitle">
             <a href="#">Сканер Leica ScanStation P30</a>
         </div>
-        <label class="popup__field">
+        <label class="popup__field form__field">
             <span>Имя</span>
             <input type="text" placeholder="Максим Николаевич">
         </label>
-        <label class="popup__field">
+        <label class="popup__field form__field">
             <span>Телефон</span>
             <input type="tel" placeholder="+7 (123) 321-21-21">
         </label>
-        <label class="popup__field">
+        <label class="popup__field form__field">
             <span>Ваше сообщение</span>
             <textarea placeholder="Оставьте любое сообщение по заказу"></textarea>
         </label>
@@ -700,21 +704,6 @@
         </div>
 
     </form>
-
-    <!--<form id="popup" class="popup">
-        <div class="popup__title">Оставьте заявку на участие</div>
-        <input type="text" class="popup__field" placeholder="Ваше имя">
-        <input type="tel" class="popup__field" placeholder="Ваш телефон">
-        <input type="email" class="popup__field" placeholder="Ваш email">
-        <label class="popup__check">
-            <input type="checkbox">
-            <span>Я согласен с политикой конфиденциальности</span>
-        </label>
-        <div class="popup__button">
-            <button type="submit" class="button">Отправить</button>
-        </div>
-        <div class="popup__text">Обработка персональных данных осуществляется согласно ФЗ РФ от 27 июля 2006 г. № 152-ФЗ</div>
-    </form>-->
 
     <!-- SVG SPRITE -->
     <svg xmlns="http://www.w3.org/2000/svg">
@@ -757,16 +746,19 @@
             c1-3.3,2.1-5.8,4.6-9.4c4.3-6,76.5-101.3,90-119.2c2.2-2.7,4.5-5.5,6-7.1c5-5.5,13-3.3,15.3-2.5c4.6,1.6,12.3,7.8,16,14.3
             C367.8,19.9,370.1,25.5,366.5,30.4z"/>
         </symbol>
-        <symbol id="icon-load"  viewBox="0 0 427.91 486.54">
+        <symbol id="icon-load" viewBox="0 0 427.91 486.54">
             <path d="M336.38,0,322.46,13.92l67.76,67.76H102.83A98.86,98.86,0,0,0,4.08,180.43v61.39H23.77V180.43a79.14,79.14,0,0,1,79.06-79.05H390.22l-67.76,67.76,13.92,13.92,91.53-91.53Z"/><path d="M404.14,244.72v61.39a79.14,79.14,0,0,1-79.05,79.05H37.69l67.76-67.76L91.53,303.48,0,395l91.53,91.53,13.92-13.92L37.69,404.86h287.4a98.86,98.86,0,0,0,98.75-98.75V244.72Z"/>
+        </symbol>
+        <symbol id="icon-filter" viewBox="0 0 402.577 402.577">
+            <path d="M400.858,11.427c-3.241-7.421-8.85-11.132-16.854-11.136H18.564c-7.993,0-13.61,3.715-16.846,11.136
+            c-3.234,7.801-1.903,14.467,3.999,19.985l140.757,140.753v138.755c0,4.955,1.809,9.232,5.424,12.854l73.085,73.083
+            c3.429,3.614,7.71,5.428,12.851,5.428c2.282,0,4.66-0.479,7.135-1.43c7.426-3.238,11.14-8.851,11.14-16.845V172.166L396.861,31.413
+            C402.765,25.895,404.093,19.231,400.858,11.427z"/>
         </symbol>
     </svg>
 </div>
 
 <!-- Load Scripts Start -->
-<!--<script src="libs/jquery-3.4.0/jquery-3.4.0.min.js" defer></script>
-<script src="libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js" defer></script>
-<script src="libs/fancybox/dist/jquery.fancybox.js" defer></script>-->
 <script src="js/scripts.js" defer></script>
 <script src="js/common.js" defer></script>
 <!-- Load Scripts End -->

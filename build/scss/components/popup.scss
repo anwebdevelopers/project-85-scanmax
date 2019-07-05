@@ -35,7 +35,7 @@
         }
     }
 }
-.popup__field {
+.form__field {
     display: block;
 
 
@@ -78,36 +78,76 @@
         resize: vertical;
     }
 }
-.popup__check {
+.form__check {
     display: block;
     margin-top: 3rem;
     input {
         display: none;
         &:checked + span {
-            &:before {
-                transform: rotate(-55deg);
-                border-color: $color-accent;
-                border-width:3px;
-                border-top-color: rgba(0,0,0,0);
-                border-right-color: rgba(0,0,0,0);
-                height: 1.1rem;
-
+            //&:before {
+            //
+            //    border-color: $color-accent;
+            //    border-width:3px;
+            //
+            //    height: 1.1rem;
+            //
+            //}
+            &:after {
+                opacity: 1;
             }
         }
         &+ span {
             position: relative;
             padding-left: 3rem;
             font-size: 1.4rem;
-            color: #fff;
+            text-shadow: 0 0 0 currentColor;
+            color: #b8b9bf;
+            cursor: pointer;
+            transition: .3s;
             &:before {
                 content: '';
                 position: absolute;
                 left: 0;
-                top: -.16em;
-                width: 1.6rem;
-                height: 1.6rem;
+                //top: -.16em;
+                width: 2.2rem;
+                height: 2.2rem;
+                border-radius: .2rem;
                 border: 1px solid currentColor;
-                transition: .3s;
+                //transition: .3s;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                left: .4rem;
+                top: .4rem;
+                transform: rotate(-50deg);
+                width: 1.3rem;
+                height: .8rem;
+                border-left: 2px solid $color-accent;
+                border-bottom: 2px solid $color-accent;
+                opacity: 0;
+                //transition: .3s;
+            }
+
+        }
+    }
+
+    &:hover, &:active {
+        input {
+            &:checked + span {
+                &:before {
+                    background-color: currentColor;
+                }
+            }
+
+            &+ span {
+                color: $colot-font;
+                &:before {
+                    //background-color: currentColor;
+                }
+                &:after {
+                    border-color: #fff;
+                }
             }
         }
     }

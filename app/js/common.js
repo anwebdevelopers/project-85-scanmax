@@ -345,4 +345,21 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
     } ( jQuery ) );
 
+
+    /*******************************************************/
+    //MOBILE FILTER
+    /*******************************************************/
+
+    ( function( $ ) {
+
+        $( '.page__filter-button' ).on( 'click', function ( event ) {
+
+            event.preventDefault();
+
+            $( this )[ 0 ].hasAttribute( 'active' ) ? $( this ).removeAttr( 'active' ) : $( this ).attr( 'active', '' )
+
+        } );
+
+    } ( jQuery ) );
+
 } );
