@@ -244,9 +244,9 @@ body {
 }
 .text {
 	line-height: 1.5;
-	&:not( :first-child ) {
-		margin-top: 5rem;
-	}
+	//&:not( :first-child ) {
+	//	margin-top: 5rem;
+	//}
 
 	&:after {
 		content: '';
@@ -455,6 +455,13 @@ body {
 
 @import 'components/page.scss';
 @import 'components/goods.scss';
+@import 'components/card.scss';
+@import 'components/description.scss';
+@import 'components/features.scss';
+@import 'components/gallery.scss';
+@import 'components/specifications.scss';
+
+
 
 //ALWAYS END
 

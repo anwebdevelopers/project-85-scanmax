@@ -4,10 +4,11 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
     let windowWidth = window.innerWidth;
 
-    /*******************************************************/
-    //MENU
-    /*******************************************************/
     ( function( $ ) {
+
+        /*******************************************************/
+        //MENU
+        /*******************************************************/
 
         const $elemNav = $( '.header__menu' ),
            $buttonNav = $( '.header__menu-button' );
@@ -32,13 +33,10 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             }
         } );
 
-    } ( jQuery ) );
 
-    /*******************************************************/
-    //MOBILE MENU ACCORDION
-    /*******************************************************/
-    ( function( $ ) {
-
+        /*******************************************************/
+        //MOBILE MENU ACCORDION
+        /*******************************************************/
         $( window ).on( 'load resize', function( event ) {
 
             const newWindowWidth = window.innerWidth;
@@ -80,13 +78,11 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
                 }
             }
         } );
-    } ( jQuery ) );
 
-    /*******************************************************/
-    //HEADER SLIDER
-    /*******************************************************/
 
-    ( function( $ ) {
+        /*******************************************************/
+        //HEADER SLIDER
+        /*******************************************************/
 
         $( '.header__slider-box' ).addClass( 'owl-carousel' ).owlCarousel( {
             loop: true,
@@ -107,13 +103,9 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             }
         } );
 
-    } ( jQuery ) );
-
-    /*******************************************************/
-    //ABOUT VIDEO SLIDER
-    /*******************************************************/
-
-    ( function( $ ) {
+        /*******************************************************/
+        //ABOUT VIDEO SLIDER
+        /*******************************************************/
 
         $( '.about__box' ).addClass( 'owl-carousel' ).owlCarousel( {
             loop: true,
@@ -142,13 +134,10 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             },
         } );
 
-    } ( jQuery ) );
 
-    /*******************************************************/
-    //CATALOG MOBILE SLIDER
-    /*******************************************************/
-
-    ( function( $ ) {
+        /*******************************************************/
+        //CATALOG MOBILE SLIDER
+        /*******************************************************/
 
         $( window ).on( 'load resize', function( event ) {
 
@@ -173,13 +162,10 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
         } );
 
-    } ( jQuery ) );
 
-    /*******************************************************/
-    //TIMILINE SLIDER
-    /*******************************************************/
-
-    ( function( $ ) {
+        /*******************************************************/
+        //TIMILINE SLIDER
+        /*******************************************************/
 
         $( '.timeline__box' ).addClass( 'owl-carousel' ).owlCarousel( {
             loop: false,
@@ -220,23 +206,10 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             event.preventDefault();
         } );
 
-    } ( jQuery ) );
 
-    /*******************************************************/
-    //TIMILINE GALLERY
-    /*******************************************************/
-
-    // $( '[ data-fancybox="timeline-gallery" ]' ).fancybox( {
-    //     thumbs : {
-    //         // autoStart : true
-    //     }
-    // } );
-
-    /*******************************************************/
-    //PUBLICATIONS MOBILE SLIDER
-    /*******************************************************/
-
-    ( function( $ ) {
+        /*******************************************************/
+        //PUBLICATIONS MOBILE SLIDER
+        /*******************************************************/
 
         $( window ).on( 'load resize', function( event ) {
 
@@ -266,14 +239,10 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             }
         } );
 
-    } ( jQuery ) );
 
-
-    /*******************************************************/
-    //PARTHNERS SLIDER
-    /*******************************************************/
-
-    ( function( $ ) {
+        /*******************************************************/
+        //PARTHNERS SLIDER
+        /*******************************************************/
 
         $( '.parthners__box' ).addClass( 'owl-carousel' ).owlCarousel( {
             loop: true,
@@ -302,13 +271,10 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             },
         } );
 
-    } ( jQuery ) );
 
-
-    /*******************************************************/
-    //TABS
-    /*******************************************************/
-    ( function( $ ) {
+        /*******************************************************/
+        //TABS
+        /*******************************************************/
 
         $( '.tabs' ).attr( 'active', '' ).each( function () {
 
@@ -326,14 +292,9 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
         } );
 
-    } ( jQuery ) );
-
-
-    /*******************************************************/
-    //PUBLICATIONS TABS
-    /*******************************************************/
-
-    ( function( $ ) {
+        /*******************************************************/
+        //PUBLICATIONS TABS
+        /*******************************************************/
 
         $( '.publications__box[ active ]' ).each( function () {
 
@@ -343,14 +304,10 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
         } );
 
-    } ( jQuery ) );
 
-
-    /*******************************************************/
-    //MOBILE FILTER
-    /*******************************************************/
-
-    ( function( $ ) {
+        /*******************************************************/
+        //MOBILE FILTER
+        /*******************************************************/
 
         $( '.page__filter-button' ).on( 'click', function ( event ) {
 
@@ -359,6 +316,128 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             $( this )[ 0 ].hasAttribute( 'active' ) ? $( this ).removeAttr( 'active' ) : $( this ).attr( 'active', '' )
 
         } );
+
+
+        /*******************************************************/
+        //CARD SLIDER
+        /*******************************************************/
+
+        $( '.card__img' ).addClass( 'owl-carousel' ).owlCarousel( {
+            loop: true,
+            items: 1,
+            nav: true,
+            dots: false,
+            navText: '',
+            autoplayTimeout: 5000,
+            autoplay: true,
+            autoplayHoverPause: true,
+            smartSpeed: 600,
+            onInitialize: function( event ) {
+
+                $( event.target ).after( '<div class="card__dots"></div>' );
+
+                $( event.target ).find( '.card__img-item' ).each( function() {
+
+                    $( event.target ).next( '.card__dots' ).append( $( '<div class="card__dots-item"></div>' ).append( $( this ).find( 'img' ).clone() ) );
+                } );
+
+                $( event.target ).next( '.card__dots' ).addClass( 'owl-carousel' ).owlCarousel( {
+                    loop: true,
+                    items: 6,
+                    nav: true,
+                    dots: false,
+                    navText: '',
+                    smartSpeed: 600,
+
+                    responsiveClass: true,
+                    responsive: {
+                        0: {
+                            items: 4,
+                            nav: false,
+                        },
+                        360: {
+                            items: 5,
+                            nav: false,
+                        },
+                        481: {
+                            items: 6,
+                            nav: false,
+                        },
+                        641: {
+                            items: 7,
+                            nav: false,
+                        },
+                        769: {
+                            items: 4,
+
+                        },
+                        1025: {
+                            items: 5
+                        },
+                        1281: {
+                            items: 6
+                        },
+                    },
+                    onInitialize: function( event ) {
+
+                        $( event.target ).on( 'click', '.owl-item', function() {
+                            $( event.target ).trigger( 'to.owl.carousel', $( this ).closest( '.owl-item' ).index() - ( $( event.target ).find( '.owl-item.cloned' ).length / 2 ) );
+                        } );
+                    },
+                    onTranslate: function( event ) {
+
+                        if ( ! $( event.target ).hasClass( 'listener-translate-event' ) ) {
+
+                            $( event.target ).prev( '.card__img' ).addClass( 'listener-translate-event' ).trigger( 'to.owl.carousel', event.item.index + (event.item.count - ( $( event.target ).find( '.owl-item.cloned' ).length / 2 ) ) )
+                        } else {
+                            $( event.target ).removeClass( 'listener-translate-event' );
+                        }
+                    },
+                } );
+            },
+            onTranslate: function( event ) {
+
+                if ( ! $( event.target ).hasClass( 'listener-translate-event' ) ) {
+
+                    $( event.target ).next( '.card__dots' ).addClass( 'listener-translate-event' ).trigger( 'to.owl.carousel', event.item.index + (event.item.count - ( $( event.target ).find( '.owl-item.cloned' ).length / 2 ) ) );
+                } else {
+                    $( event.target ).removeClass( 'listener-translate-event' );
+                }
+            },
+        } );
+
+
+        /*******************************************************/
+        //CARD GALLERY SLIDER
+        /*******************************************************/
+
+        $( '.gallery__box' ).addClass( 'owl-carousel' ).owlCarousel( {
+            loop: true,
+            nav: true,
+            navText: '',
+            dots: false,
+            autoplayTimeout: 5000,
+            autoplay: true,
+            smartSpeed: 1200,
+            autoWidth: true,
+            responsiveClass: true,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    dots: true,
+                    nav: false,
+                },
+                641: {
+                    dots: false,
+                    nav: true,
+                },
+            },
+
+            onInitialized: function( event ) {
+                $( event.target ).prepend( '<div class="gallery__head"></div>').find( '.gallery__head' ).prepend( $( event.target ).prev( '.gallery__title' ) ).append( $( event.target ).find( '.owl-nav' ) );
+            },
+        } );
+
 
     } ( jQuery ) );
 
