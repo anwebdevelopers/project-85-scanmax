@@ -226,6 +226,7 @@ body {
 	line-height: 1.5;
 	letter-spacing: .025em;
 	text-transform: uppercase;
+	word-wrap: break-word;
 	&[ data-text-decor ] {
 		&:before {
 			content: attr( data-text-decor );
@@ -444,7 +445,7 @@ body {
 @import 'components/header-stick.scss';
 @import 'components/header-slider.scss';
 @import 'components/header-sale.scss';
-@import 'components/about.scss';
+@import 'components/video.scss';
 @import 'components/catalog.scss';
 @import 'components/timeline.scss';
 @import 'components/publications.scss';
@@ -460,8 +461,9 @@ body {
 @import 'components/features.scss';
 @import 'components/gallery.scss';
 @import 'components/specifications.scss';
-
-
+@import 'components/equipment.scss';
+@import 'components/documentation.scss';
+@import 'components/additional.scss';
 
 //ALWAYS END
 

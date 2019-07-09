@@ -14,7 +14,7 @@
 
     //column-count: 2;
     //column-gap: 2px;
-    box-shadow: 0 1rem 2rem 0 transparentize(#9b9b9b, .9);
+    box-shadow: 0 1rem 2rem 0 transparentize(#9b9b9b, .8);
 
     display: flex;
     flex-wrap: wrap;
@@ -59,7 +59,7 @@
 }
 .specifications__text {
     padding: 4rem 10%;
-    box-shadow: 0 1rem 2rem 0 transparentize(#9b9b9b, .9);
+    box-shadow: 0 1rem 2rem 0 transparentize(#9b9b9b, .8);
     font-size: 1.4rem;
 }
 @media only screen and (max-width : 1440px) {

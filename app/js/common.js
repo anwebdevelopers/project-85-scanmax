@@ -107,7 +107,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
         //ABOUT VIDEO SLIDER
         /*******************************************************/
 
-        $( '.about__box' ).addClass( 'owl-carousel' ).owlCarousel( {
+        $( '.video__box' ).addClass( 'owl-carousel' ).owlCarousel( {
             loop: true,
             nav: true,
             navText: '',
@@ -130,7 +130,8 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             },
 
             onInitialized: function( event ) {
-                $( event.target ).prepend( '<div class="about__head"></div>').find( '.about__head' ).prepend( $( event.target ).prev( '.about__title' ) ).append( $( event.target ).find( '.owl-nav' ) );
+
+                $( event.target ).prepend( '<div class="video__head"></div>').find( '.video__head' ).prepend( $( event.target ).prev( '.video__title' ) ).append( $( event.target ).find( '.owl-nav' ) );
             },
         } );
 
@@ -435,6 +436,67 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
             onInitialized: function( event ) {
                 $( event.target ).prepend( '<div class="gallery__head"></div>').find( '.gallery__head' ).prepend( $( event.target ).prev( '.gallery__title' ) ).append( $( event.target ).find( '.owl-nav' ) );
+            },
+        } );
+
+
+        /*******************************************************/
+        //CATALOG MOBILE SLIDER
+        /*******************************************************/
+
+        $( window ).on( 'load resize', function( event ) {
+
+            if ( window.innerWidth <= 641 ) {
+
+                $( '.equipment__box' ).addClass( 'owl-carousel' ).owlCarousel( {
+                    loop: true,
+                    items: 2,
+                    nav: false,
+                    dots: true,
+                    autoplayTimeout: 5000,
+                    autoplay: true,
+                    smartSpeed: 1200,
+                    // autoWidth: true,
+                    autoplayHoverPause: true,
+                } );
+
+            } else {
+
+                $( '.equipment__box' ).trigger( 'destroy.owl.carousel' ).removeClass( 'owl-carousel' );
+            }
+
+        } );
+
+
+        /*******************************************************/
+        //ABOUT VIDEO SLIDER
+        /*******************************************************/
+
+        $( '.additional__box' ).addClass( 'owl-carousel' ).owlCarousel( {
+            loop: true,
+            nav: true,
+            navText: '',
+            dots: false,
+            autoplayTimeout: 5000,
+            autoplay: true,
+            smartSpeed: 1200,
+            autoWidth: true,
+            responsiveClass: true,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    dots: true,
+                    nav: false,
+                },
+                641: {
+                    dots: false,
+                    nav: true,
+                },
+            },
+
+            onInitialized: function( event ) {
+
+                $( event.target ).prepend( '<div class="additional__head"></div>').find( '.additional__head' ).prepend( $( event.target ).prev( '.additional__title' ) ).append( $( event.target ).find( '.owl-nav' ) );
             },
         } );
 
