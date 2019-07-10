@@ -242,6 +242,17 @@
                     text-align: center;
                 }
             }
+            &:hover, &:active {
+                color: $color-main;
+                .button__icon {
+                    color: #fff;
+                    background-color: $color-main;
+                    border-color: $color-main;
+                    &:before {
+                        background-color: $color-main;
+                    }
+                }
+            }
         }
     }
 }

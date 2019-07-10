@@ -59,7 +59,7 @@ body textarea:required:valid {
 }
 
 *::-webkit-scrollbar-thumb {
-	background-color: $color-accent;
+	background-color: #b8b9bf;
 	-webkit-border-radius: 1rem;
 	border-radius: 1rem;
 	-webkit-transition: all .5s ease;
@@ -221,7 +221,7 @@ body {
 }
 .title {
 	margin: 0;
-	font-size: 3.6rem;
+	font-size: 3rem;
 	font-weight: 700;
 	line-height: 1.5;
 	letter-spacing: .025em;
@@ -242,6 +242,9 @@ body {
 			color: #48474d;
 		}
 	}
+}
+.home .title {
+	font-size: 3.6rem;
 }
 .text {
 	line-height: 1.5;
@@ -379,12 +382,14 @@ body {
 }
 
 @media only screen and (max-width : 1280px) {
+	.home .title,
 	.title {
 		font-size: 3rem;
 	}
 }
 
 @media only screen and (max-width : 1024px) {
+	.home .title,
 	.title {
 		font-size: 2.4rem;
 		&[ data-text-decor ] {
@@ -397,6 +402,7 @@ body {
 }
 
 @media only screen and (max-width : 768px) {
+	.home .title,
 	.title {
 		font-size: 2.2rem;
 		&[ data-text-decor ] {
@@ -408,6 +414,7 @@ body {
 }
 
 @media only screen and (max-width : 640px) {
+	.home .title,
 	.title {
 		font-size: 2rem;
 		text-align: center;
@@ -420,6 +427,7 @@ body {
 }
 
 @media only screen and (max-width : 480px) {
+	.home .title,
 	.title {
 		font-size: 1.8rem;
 		&[ data-text-decor ] {
@@ -431,6 +439,7 @@ body {
 }
 
 @media only screen and (max-width : 360px) {
+	.home .title,
 	.title {
 		&[ data-text-decor ] {
 			&:before {
@@ -456,7 +465,9 @@ body {
 
 @import 'components/page.scss';
 @import 'components/goods.scss';
+
 @import 'components/card.scss';
+@import 'components/scroll.scss';
 @import 'components/description.scss';
 @import 'components/features.scss';
 @import 'components/gallery.scss';
@@ -464,6 +475,11 @@ body {
 @import 'components/equipment.scss';
 @import 'components/documentation.scss';
 @import 'components/additional.scss';
+@import 'components/recommend.scss';
+@import 'components/banner.scss';
+
+@import 'components/contacts.scss';
+
 
 //ALWAYS END
 

@@ -66,9 +66,17 @@
     justify-content: space-between;
 }
 .documentation__list-item {
+    text-decoration: none;
+    color: inherit;
+    display: block;
     flex: 0 0 auto;
     width: 47.5%;
     margin-top: 3rem;
+    transition: .3s;
+
+    &:hover, &:active {
+        color: $color-main;
+    }
 
     position: relative;
     padding-left: 5rem;

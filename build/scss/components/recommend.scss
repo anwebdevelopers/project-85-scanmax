@@ -1,0 +1,189 @@
+.recommend {
+    padding: 7rem 0;
+    overflow: hidden;
+    .goods__box {
+        &.owl-carousel {
+            display: block;
+            margin: 0;
+            .owl-stage-outer {
+                overflow: visible;
+                margin-top: 5rem;
+                .owl-stage {
+                    display: flex;
+                    .owl-item {
+                        flex: 0 0 auto;
+                        display: flex;
+                        transition: .5s;
+                        &:not( .active ) {
+                            opacity: 0;
+                        }
+
+                        &:hover, &:active {
+                            z-index: 1;
+                        }
+                        .goods__item {
+                            width: calc(100% - 1px);
+                            padding: 3rem 5% 2rem 5%;
+                        }
+                        .goods__item-img {
+                            img {
+                                width: auto;
+                            }
+                        }
+                        .goods__item-marks {
+                            margin-left: -5.5%;
+                        }
+                    }
+                }
+            }
+            .owl-nav {
+                margin-top: .5rem;
+                flex: 0 0 auto;
+                display: flex;
+                &.disabled {
+                    display: none;
+                }
+                .owl-prev, .owl-next {
+                    outline: none;
+                    flex: 0 0 auto;
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 50%;
+                    color: #e6e6ea;
+                    border: 1px solid currentColor;
+                    background-color: #fff;
+                    transition: .3s;
+
+                    position: relative;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        border-left: 1px solid currentColor;
+                        border-top: 1px solid currentColor;
+                        transition: .3s;
+                    }
+                    &:hover, &:active {
+                        box-shadow: 0 1rem 2rem 0 transparentize(#9b9b9b, .7);
+                        &:before {
+                            border-color: $color-accent;
+                        }
+                    }
+                }
+                .owl-prev {
+                    margin-right: 1rem;
+                    &:before {
+                        transform: translate(-30%, -50%) rotate(-45deg);
+                    }
+                }
+                .owl-next {
+                    margin-left: 1rem;
+                    &:before {
+                        transform: translate(-70%, -50%) rotate(135deg);
+                    }
+                }
+            }
+            .recommend__head {
+                display: flex;
+                .recommend__title {
+                    flex: 1 1 auto;
+                    margin-right: 2rem;
+                    //margin-left: 15rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .goods__item {
+        width: calc(25% - 1px);
+    }
+}
+@media only screen and (max-width : 1440px) {
+
+}
+
+@media only screen and (max-width : 1280px) {
+    .recommend {
+        .goods__item {
+            width: calc(33.3333% - 1px);
+        }
+    }
+}
+
+@media only screen and (max-width : 1024px) {
+    .recommend {
+        padding: 5rem 0;
+        .goods__item {
+            width: calc(50% - 1px);
+        }
+    }
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+    .recommend {
+        .goods__item {
+            width: auto;
+        }
+        .goods__box {
+            &.owl-carousel {
+                .owl-stage-outer {
+                    margin-top: 3rem;
+
+                    .owl-stage {
+                        .owl-item {
+                        }
+                    }
+                }
+
+                .owl-dots {
+                    margin-top: 2rem;
+
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    .owl-dot {
+                        outline: none;
+                        flex: 0 0 auto;
+                        width: 1rem;
+                        height: 1rem;
+                        margin: 1rem .6rem 0 .6rem;
+                        border-radius: 50%;
+                        color: #c6c8cc;
+                        border: 1px solid currentColor;
+                        transition: .3s;
+
+                        &.active {
+                            background-color: currentColor;
+                        }
+                    }
+                }
+
+                .recommend__head {
+
+                    display: block;
+
+                    .recommend__title {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .recommend {
+        padding: 4rem 0;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+
+}

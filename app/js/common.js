@@ -220,7 +220,6 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
                     $( this ).addClass( 'owl-carousel' ).owlCarousel( {
                         loop: true,
-                        // items: 1,
                         nav: false,
                         dots: true,
                         autoplayTimeout: 5000,
@@ -456,7 +455,6 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
                     autoplayTimeout: 5000,
                     autoplay: true,
                     smartSpeed: 1200,
-                    // autoWidth: true,
                     autoplayHoverPause: true,
                 } );
 
@@ -500,6 +498,174 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
             },
         } );
 
+        /*******************************************************/
+        //RECOMMENDED GOODS SLIDER
+        /*******************************************************/
+
+        $( '.recommend .goods__box' ).addClass( 'owl-carousel' ).owlCarousel( {
+            items: 4,
+            loop: true,
+            nav: true,
+            navText: '',
+            dots: false,
+            autoplayTimeout: 5000,
+            autoplay: true,
+            smartSpeed: 1200,
+            responsiveClass: true,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    dots: true,
+                    nav: false,
+                },
+                641: {
+                    dots: false,
+                    nav: true,
+                    items: 2,
+                },
+                1025: {
+                    items: 3,
+                },
+                1281: {
+                    items: 4,
+                },
+            },
+
+            onInitialized: function( event ) {
+
+                $( event.target ).prepend( '<div class="recommend__head"></div>').find( '.recommend__head' ).prepend( $( event.target ).prev( '.recommend__title' ) ).append( $( event.target ).find( '.owl-nav' ) );
+            },
+        } );
+
+        /*******************************************************/
+        //CARD ANCHOR SCROLL
+        /*******************************************************/
+        const $scroll = $('.scroll');
+
+        if ( $scroll.length ) {
+
+            let startPos = $scroll.offset().top;
+
+            $( window ).scroll( function() {
+
+                if ( $( window ).scrollTop() >= startPos ) {
+
+                    if ( ! $scroll[ 0 ].hasAttribute( 'active' ) ) {
+                        const navHeight = $scroll.height();
+                        $scroll.css( { 'min-height': navHeight + 'px' } ).attr( 'active', '' );
+                    }
+                } else {
+
+                    $scroll.removeAttr( 'active' ).removeAttr( 'style' );
+                }
+            } );
+
+            $( window ).resize( function() {
+
+                startPos = $scroll.offset().top;
+            } );
+
+            $( '.scroll__nav a' ).mPageScroll2id();
+        }
+
+
+        //*********************************************************//
+        //YANDEX MAP
+        //*********************************************************//
+        ( function() {
+
+            const mapElem = document.querySelector( '#map' );
+
+            const lazyLoadMap = new IntersectionObserver(
+
+                function( entries ) {
+
+                    for ( let i = 0; i < entries.length; i++  ) {
+
+                        const entry = entries[ i ];
+                        const target = entry.target;
+
+                        if ( entry.isIntersecting ) {
+
+                            const script = document.createElement( 'script' );
+
+                            script.src = '//api-maps.yandex.ru/2.1/?lang=ru_RU';
+
+                            document.getElementsByTagName( 'head' )[ 0 ].appendChild( script );
+
+                            script.onload = function() {
+
+                                ymaps.ready( function() {
+
+                                    const myMap = new ymaps.Map( 'map', {
+                                        center: [ 55.615807, 37.626187 ],
+                                        zoom: 16,
+                                        controls: [],
+                                        behaviors: [ 'drag', 'dblClickZoom', 'rightMouseButtonMagnifier', 'multiTouch' ]
+                                    }, {
+                                        searchControlProvider: 'yandex#search'
+                                    });
+
+                                    //Элементы управления
+                                    myMap.controls.add( 'zoomControl', {
+                                        size: 'small',
+                                        position: {
+                                            top: 'auto',
+                                            right: 10,
+                                            bottom: 50
+                                        }
+                                    } );
+
+                                    myMap.geoObjects.add( new ymaps.Placemark(
+                                        [ 55.615807, 37.626187 ],
+                                        {
+                                            hintContent: '117545, г Москва, ул. Дорожная, д.8, корп.1, комната К1-313, этаж 3',
+                                            balloonContent: '117545, г Москва, ул. Дорожная, д.8, корп.1, комната К1-313, этаж 3',
+                                        },
+                                        {
+                                            // iconLayout: 'islands#redIcon',
+                                            preset: 'islands#redGlyphIcon'
+                                            // iconImageHref: 'img/icon-mark.svg',
+                                            // iconImageSize: [ 53, 62 ],
+                                            // iconImageOffset: [- 26, -62 ],
+                                        }
+                                    ) );
+
+                                    //Вкл/Выкл драг карты при адаптиве
+                                    const manageDrag = function() {
+                                        window.innerWidth <= 1024 ? myMap.behaviors.disable( 'drag' ) : myMap.behaviors.enable( 'drag' )
+                                    };
+                                    window.onload = manageDrag
+                                    window.onresize = manageDrag
+
+                                    //перерисуем карту по ресайзу
+                                    typeof ResizeObserver === 'object' && new ResizeObserver( function( entries ) {
+                                        myMap.container.fitToViewport()
+                                    } ).observe( mapElem );
+
+                                    //перерисуем карту после инициализации
+                                    myMap.container.fitToViewport();
+
+                                } );
+
+                            }
+
+                            lazyLoadMap.unobserve( target );
+                        }
+                    }
+                },
+                {
+                    root: null,
+                    rootMargin: ( window.innerHeight / 2 ) + 'px ' + ( window.innerWidth / 2 ) + 'px',
+                    threshold: [ 0 ],
+                }
+            );
+
+            // Start observing an element
+            lazyLoadMap.observe( mapElem );
+
+        } () );
 
     } ( jQuery ) );
 
