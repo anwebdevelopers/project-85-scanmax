@@ -662,7 +662,7 @@
         &[ active ] {
             > .mobile-menu-accordion__title {
                 color: $color-accent;
-                &:before {
+                &:after {
                     content: '';
                     transform: translateY(-25%) rotate( -135deg );
                     border-color: $color-accent;

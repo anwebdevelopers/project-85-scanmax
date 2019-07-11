@@ -1,0 +1,142 @@
+.articles {
+    background-color: #fff;
+    box-shadow: 0 .5rem 2rem 0 transparentize(#9b9b9b, .9);
+}
+.articles__item {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fff;
+    transition: .3s;
+    &:hover, &:active {
+        //border-bottom-color: rgba(0,0,0,0);
+        z-index: 2;
+        transform: scale(1.01);
+        box-shadow: 0 .5rem 2rem 0 transparentize(#9b9b9b, .9);
+        .articles__img {
+            img {
+                //transform: scale(1.1);
+            }
+            &:before {
+                opacity: 1;
+            }
+        }
+        .articles__title {
+            color: $color-accent;
+        }
+    }
+
+    position: relative;
+    display: flex;
+}
+.articles__date {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding: 1.5rem;
+    background-color: #000;
+    color: #fff;
+    opacity: .5;
+}
+.articles__date-day {
+    font-size: 2.4rem;
+}
+.articles__date-month-year {
+    font-size: 1.4rem;
+}
+.articles__img {
+    margin: 0;
+    flex: 0 0 auto;
+    width: 35%;
+    overflow: hidden;
+
+    position: relative;
+    z-index: 0;
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 2.5s;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparentize(#3f5fc6, .24);
+        opacity: 0;
+        transition: .3s;
+    }
+}
+.articles__content {
+    flex: 0 0 auto;
+    width: 65%;
+    padding: 3rem 3%;
+}
+.articles__title {
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: .025;
+    transition: .3s;
+}
+.articles__text {
+    margin: 1rem 0 0 0;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+@media only screen and (max-width : 1440px) {
+
+}
+
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 1024px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+    .articles {
+        margin: 0 -4.4%;
+    }
+}
+
+@media only screen and (max-width : 640px) {
+    .articles__item {
+        display: block;
+    }
+    .articles__img {
+        width: auto;
+        //min-height: 20rem;
+        img {
+            position: static;
+        }
+    }
+    .articles__content {
+        width: auto;
+        padding: 3rem 4.4%;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 360px) {
+
+}

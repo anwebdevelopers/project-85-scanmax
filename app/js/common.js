@@ -2,7 +2,7 @@
 
 document.addEventListener( 'DOMContentLoaded', function( event ) {
 
-    let windowWidth = window.innerWidth;
+
 
     ( function( $ ) {
 
@@ -37,29 +37,34 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
         /*******************************************************/
         //MOBILE MENU ACCORDION
         /*******************************************************/
-        $( window ).on( 'load resize', function( event ) {
+        ( function() {
 
-            const newWindowWidth = window.innerWidth;
+            let windowWidth = window.innerWidth;
 
-            if ( ( event.type === 'load' ) || ( ( event.type === 'resize' ) && ( windowWidth !== newWindowWidth ) ) ) {
+            $( window ).on( 'load resize', function( event ) {
 
-                windowWidth = newWindowWidth;
+                const newWindowWidth = window.innerWidth;
 
-                if ( window.innerWidth <= 640 ) {
+                if ( ( event.type === 'load' ) || ( ( event.type === 'resize' ) && ( windowWidth !== newWindowWidth ) ) ) {
 
-                    $( '.mobile-menu-accordion' ).each( function() {
-                        const $this = $( this );
-                        ( $this.hasClass('active') || $this.find('.active').length ) ? $this.attr('active', '').children('.mobile-menu-accordion__box').show() : $this.removeAttr( 'active' ).children('.mobile-menu-accordion__box').hide();
-                    } );
+                    windowWidth = newWindowWidth;
 
-                } else {
+                    if ( window.innerWidth <= 640 ) {
 
-                    $( '.mobile-menu-accordion' ).each( function() {
-                        $( this ).removeAttr( 'active' ).children('.mobile-menu-accordion__box').show();
-                    } );
+                        $( '.mobile-menu-accordion' ).each( function() {
+                            const $this = $( this );
+                            ( $this.hasClass('active') || $this.find('.active').length ) ? $this.attr('active', '').children('.mobile-menu-accordion__box').show() : $this.removeAttr( 'active' ).children('.mobile-menu-accordion__box').hide();
+                        } );
+
+                    } else {
+
+                        $( '.mobile-menu-accordion' ).each( function() {
+                            $( this ).removeAttr( 'active' ).children('.mobile-menu-accordion__box').show();
+                        } );
+                    }
                 }
-            }
-        } );
+            } );
+        } () );
 
 
         $( '.mobile-menu-accordion' ).on( 'click', '.mobile-menu-accordion__title', function( event ) {
@@ -216,7 +221,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
             if ( window.innerWidth <= 769 ) {
 
-                $( '.publications__section' ).each( function () {
+                $( '.publications__box.publications__box_style_slider' ).each( function () {
 
                     $( this ).addClass( 'owl-carousel' ).owlCarousel( {
                         loop: true,
@@ -233,7 +238,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
             } else {
 
-                $( '.publications__section' ).each( function () {
+                $( '.publications__box.publications__box_style_slider' ).each( function () {
                     $( this ).trigger( 'destroy.owl.carousel' ).removeClass( 'owl-carousel' );
                 } );
             }
@@ -296,7 +301,7 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
         //PUBLICATIONS TABS
         /*******************************************************/
 
-        $( '.publications__box[ active ]' ).each( function () {
+        $( '.publications__tabs[ active ]' ).each( function () {
 
             $( this ).prepend( '<div class="publications__head"></div>' );
 
@@ -541,33 +546,119 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
         /*******************************************************/
         //CARD ANCHOR SCROLL
         /*******************************************************/
-        const $scroll = $('.scroll');
+        ( function() {
 
-        if ( $scroll.length ) {
+            const $scroll = $('.scroll');
 
-            let startPos = $scroll.offset().top;
+            if ( $scroll.length ) {
 
-            $( window ).scroll( function() {
+                let startPos = $scroll.offset().top;
 
-                if ( $( window ).scrollTop() >= startPos ) {
+                $( window ).scroll( function() {
 
-                    if ( ! $scroll[ 0 ].hasAttribute( 'active' ) ) {
-                        const navHeight = $scroll.height();
-                        $scroll.css( { 'min-height': navHeight + 'px' } ).attr( 'active', '' );
+                    if ( $( window ).scrollTop() >= startPos ) {
+
+                        if ( ! $scroll[ 0 ].hasAttribute( 'active' ) ) {
+                            const navHeight = $scroll.height();
+                            $scroll.css( { 'min-height': navHeight + 'px' } ).attr( 'active', '' );
+                        }
+                    } else {
+
+                        $scroll.removeAttr( 'active' ).removeAttr( 'style' );
                     }
-                } else {
+                } );
 
-                    $scroll.removeAttr( 'active' ).removeAttr( 'style' );
+                $( window ).resize( function() {
+
+                    startPos = $scroll.offset().top;
+                } );
+
+                $( '.scroll__nav a' ).mPageScroll2id();
+            }
+
+        } () );
+
+
+        /*******************************************************/
+        //MOBILE PAGE NAV ACCORDION
+        /*******************************************************/
+        ( function() {
+
+            let windowWidth = window.innerWidth;
+
+            $( window ).on( 'load resize', function( event ) {
+
+                const newWindowWidth = window.innerWidth;
+
+                if ( ( event.type === 'load' ) || ( ( event.type === 'resize' ) && ( windowWidth !== newWindowWidth ) ) ) {
+
+                    windowWidth = newWindowWidth;
+
+                    if ( window.innerWidth <= 1024 ) {
+
+                        $( '.mobile-nav-accordion' ).each( function() {
+                            const $this = $( this );
+                            ( $this.hasClass('active') || $this.find('.active').length ) ? $this.attr('active', '').children('.mobile-nav-accordion__box').show() : $this.removeAttr( 'active' ).children('.mobile-nav-accordion__box').hide();
+                        } );
+
+                    } else {
+
+                        $( '.mobile-nav-accordion' ).each( function() {
+                            $( this ).removeAttr( 'active' ).children('.mobile-nav-accordion__box').show();
+                        } );
+                    }
+                }
+            } );
+        } () );
+
+
+
+        $( '.mobile-nav-accordion' ).on( 'click', '.mobile-nav-accordion__title', function( event ) {
+
+            if ( window.innerWidth <= 1024 ) {
+
+                const $this = $( this );
+
+                if ( ! $this.closest( '.mobile-nav-accordion' )[ 0 ].hasAttribute( 'active' ) ) {
+
+                    event.preventDefault();
+
+                    $this.closest( '.mobile-nav-accordion' ).siblings().removeAttr( 'active' ).children( '.mobile-nav-accordion__box' ).slideUp( 300 ).end().end().closest( '.header__submenu-column' ).siblings().children( '.mobile-nav-accordion' ).removeAttr( 'active' ).children( '.mobile-nav-accordion__box' ).slideUp( 300 );
+
+                    $this.closest( '.mobile-nav-accordion' ).attr( 'active', '' ).children( '.mobile-nav-accordion__box' ).slideDown( 300 );
+                }
+            }
+        } );
+
+        $( '[ data-current-category ]' ).on( 'click', function ( event ) {
+
+            if (  $( event.target )[ 0 ].hasAttribute( 'data-current-category' ) ) {
+                event.target.toggleAttribute( 'active');
+                $( this ).find( '> ul' ).slideToggle( 300 );
+            }
+        } );
+
+        ( function() {
+
+            let windowWidth = window.innerWidth;
+
+            $( window ).on( 'resize', function( ) {
+
+                const newWindowWidth = window.innerWidth;
+
+                if ( windowWidth !== newWindowWidth ) {
+
+                    windowWidth = newWindowWidth;
+
+                    if ( window.innerWidth >= 1024 ) {
+
+                        $( '[ data-current-category ]' ).find( 'ul' ).removeAttr( 'style' ).end().removeAttr( 'active' );
+                    }
                 }
             } );
 
-            $( window ).resize( function() {
+        } () );
 
-                startPos = $scroll.offset().top;
-            } );
-
-            $( '.scroll__nav a' ).mPageScroll2id();
-        }
 
 
         //*********************************************************//
@@ -575,97 +666,74 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
         //*********************************************************//
         ( function() {
 
-            const mapElem = document.querySelector( '#map' );
+            const mapElem = document.querySelector('#map');
 
-            const lazyLoadMap = new IntersectionObserver(
+            if ( mapElem ) {
 
-                function( entries ) {
+                const script = document.createElement('script');
 
-                    for ( let i = 0; i < entries.length; i++  ) {
+                script.src = '//api-maps.yandex.ru/2.1/?lang=ru_RU';
 
-                        const entry = entries[ i ];
-                        const target = entry.target;
+                document.getElementsByTagName('head')[0].appendChild(script);
 
-                        if ( entry.isIntersecting ) {
+                script.onload = function () {
 
-                            const script = document.createElement( 'script' );
+                    ymaps.ready(function () {
 
-                            script.src = '//api-maps.yandex.ru/2.1/?lang=ru_RU';
+                        const myMap = new ymaps.Map('map', {
+                            center: [55.615807, 37.626187],
+                            zoom: 16,
+                            controls: [],
+                            behaviors: ['drag', 'dblClickZoom', 'rightMouseButtonMagnifier', 'multiTouch']
+                        }, {
+                            searchControlProvider: 'yandex#search'
+                        });
 
-                            document.getElementsByTagName( 'head' )[ 0 ].appendChild( script );
-
-                            script.onload = function() {
-
-                                ymaps.ready( function() {
-
-                                    const myMap = new ymaps.Map( 'map', {
-                                        center: [ 55.615807, 37.626187 ],
-                                        zoom: 16,
-                                        controls: [],
-                                        behaviors: [ 'drag', 'dblClickZoom', 'rightMouseButtonMagnifier', 'multiTouch' ]
-                                    }, {
-                                        searchControlProvider: 'yandex#search'
-                                    });
-
-                                    //Элементы управления
-                                    myMap.controls.add( 'zoomControl', {
-                                        size: 'small',
-                                        position: {
-                                            top: 'auto',
-                                            right: 10,
-                                            bottom: 50
-                                        }
-                                    } );
-
-                                    myMap.geoObjects.add( new ymaps.Placemark(
-                                        [ 55.615807, 37.626187 ],
-                                        {
-                                            hintContent: '117545, г Москва, ул. Дорожная, д.8, корп.1, комната К1-313, этаж 3',
-                                            balloonContent: '117545, г Москва, ул. Дорожная, д.8, корп.1, комната К1-313, этаж 3',
-                                        },
-                                        {
-                                            // iconLayout: 'islands#redIcon',
-                                            preset: 'islands#redGlyphIcon'
-                                            // iconImageHref: 'img/icon-mark.svg',
-                                            // iconImageSize: [ 53, 62 ],
-                                            // iconImageOffset: [- 26, -62 ],
-                                        }
-                                    ) );
-
-                                    //Вкл/Выкл драг карты при адаптиве
-                                    const manageDrag = function() {
-                                        window.innerWidth <= 1024 ? myMap.behaviors.disable( 'drag' ) : myMap.behaviors.enable( 'drag' )
-                                    };
-                                    window.onload = manageDrag
-                                    window.onresize = manageDrag
-
-                                    //перерисуем карту по ресайзу
-                                    typeof ResizeObserver === 'object' && new ResizeObserver( function( entries ) {
-                                        myMap.container.fitToViewport()
-                                    } ).observe( mapElem );
-
-                                    //перерисуем карту после инициализации
-                                    myMap.container.fitToViewport();
-
-                                } );
-
+                        //Элементы управления
+                        myMap.controls.add('zoomControl', {
+                            size: 'small',
+                            position: {
+                                top: 'auto',
+                                right: 10,
+                                bottom: 50
                             }
+                        });
 
-                            lazyLoadMap.unobserve( target );
-                        }
-                    }
-                },
-                {
-                    root: null,
-                    rootMargin: ( window.innerHeight / 2 ) + 'px ' + ( window.innerWidth / 2 ) + 'px',
-                    threshold: [ 0 ],
+                        myMap.geoObjects.add(new ymaps.Placemark(
+                            [55.615807, 37.626187],
+                            {
+                                hintContent: '117545, г Москва, ул. Дорожная, д.8, корп.1, комната К1-313, этаж 3',
+                                balloonContent: '117545, г Москва, ул. Дорожная, д.8, корп.1, комната К1-313, этаж 3',
+                            },
+                            {
+                                // iconLayout: 'islands#redIcon',
+                                preset: 'islands#redGlyphIcon'
+                                // iconImageHref: 'img/icon-mark.svg',
+                                // iconImageSize: [ 53, 62 ],
+                                // iconImageOffset: [- 26, -62 ],
+                            }
+                        ));
+
+
+                        const manageDrag = function () {
+                            window.innerWidth <= 1024 ? myMap.behaviors.disable('drag') : myMap.behaviors.enable('drag')
+                        };
+                        window.onload = manageDrag
+                        window.onresize = manageDrag
+
+                        typeof ResizeObserver === 'object' && new ResizeObserver(function (entries) {
+                            myMap.container.fitToViewport()
+                        }).observe(mapElem);
+
+                        myMap.container.fitToViewport();
+
+                    });
+
                 }
-            );
-
-            // Start observing an element
-            lazyLoadMap.observe( mapElem );
+            }
 
         } () );
+
 
     } ( jQuery ) );
 
