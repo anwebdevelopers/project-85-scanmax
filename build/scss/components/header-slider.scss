@@ -4,6 +4,7 @@
 
 .header__slider-box {
     max-width: 1050px;
+
     margin: 15rem 0 0 0;
     padding: 7rem 0 2rem 0;
 
@@ -28,6 +29,7 @@
 
         .owl-stage-outer {
             overflow: visible;
+            width: 100%;
             .owl-stage {
                 display: flex;
                 .owl-item {
@@ -172,6 +174,8 @@
     }
 
     display: flex;
+    //max-width: 1050px;
+
     //flex-direction: row-reverse;
 }
 .header__slider-img {

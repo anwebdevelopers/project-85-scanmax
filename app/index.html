@@ -21,8 +21,12 @@
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
 
-	<link rel="preload" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="css/main.css"></noscript>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="libs/fancybox/dist/jquery.fancybox.css">
+	<link rel="stylesheet" href="libs/fontawesome-free-5.9.0-web/css/fontawesome.css">
+	<link rel="stylesheet" href="libs/fontawesome-free-5.9.0-web/css/brands.css">
+
 </head>
 
 <body class="home">
@@ -303,11 +307,13 @@
 		</div>
 	</section>
 
-	<section class="catalog catalog_style_home">
+	<section class="catalog catalog_style_home" data-scrollax-parent="true">
+		<div class="title-decor" data-scrollax="properties:{'translateY':'-200px'}">Каталог</div>
 		<div class="container catalog__container">
-			<h2 class="title catalog__title" data-text-decor="Каталог">Каталог</h2>
+
+			<h2 class="title catalog__title">Каталог</h2>
 			<div class="catalog__box">
-				<div class="catalog__item">
+				<div class="catalog__item" data-tilt-animation>
 					<figure class="catalog__item-img">
 						<img src="img/img-catalog-1.png" alt="">
 					</figure>
@@ -325,7 +331,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="catalog__item">
+				<div class="catalog__item" data-tilt-animation>
 					<figure class="catalog__item-img">
 						<img src="img/img-catalog-2.png" alt="">
 					</figure>
@@ -343,7 +349,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="catalog__item">
+				<div class="catalog__item" data-tilt-animation>
 					<figure class="catalog__item-img">
 						<img src="img/img-catalog-3.png" alt="">
 					</figure>
@@ -361,7 +367,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="catalog__item">
+				<div class="catalog__item" data-tilt-animation>
 					<figure class="catalog__item-img">
 						<img src="img/img-catalog-4.png" alt="">
 					</figure>
@@ -379,7 +385,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="catalog__item">
+				<div class="catalog__item" data-tilt-animation>
 					<figure class="catalog__item-img">
 						<img src="img/img-catalog-5.png" alt="">
 					</figure>
@@ -397,7 +403,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="catalog__item">
+				<div class="catalog__item" data-tilt-animation>
 					<figure class="catalog__item-img">
 						<img src="img/img-catalog-6.png" alt="">
 					</figure>
@@ -761,7 +767,8 @@
 		</div>
 	</section>
 
-	<section class="seo" style="background-image: url('../img/bg-seo.jpg');">
+	<section class="seo" data-scrollax-parent="true">
+		<div class="seo__bg" style="background-image: url('img/bg-seo.jpg');height: calc(100% + 30vh);" data-scrollax="properties:{'translateY':' 30vh'}"></div>
 		<div class="container">
 			<div class="seo__box">
 				<div class="seo__content text">
@@ -1036,10 +1043,15 @@
 </svg>
 	</div>
 
-	<!-- Load Scripts Start -->
-	<script src="js/scripts.js" defer></script>
-	<script src="js/common.js" defer></script>
-	<!-- Load Scripts End -->
+<!-- Load Scripts Start -->
+<script src="libs/jquery-3.4.0/jquery-3.4.0.min.js" defer></script>
+<script src="libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js" defer></script>
+<script src="libs/fancybox/dist/jquery.fancybox.js" defer></script>
+<script src="libs/page-scroll-to-id-master/js/minified/jquery.malihu.PageScroll2id.min.js" defer></script>
+<script src="libs/Scrollax.js/scrollax.min.js" defer></script>
+<script src="libs/tilt.js/dest/tilt.jquery.js" defer></script>
+<script src="js/common.js" defer></script>
+<!-- Load Scripts End -->
 
 </body>
 </html>

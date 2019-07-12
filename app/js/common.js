@@ -734,6 +734,37 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 
         } () );
 
+        //*********************************************************//
+        //SCROLL ANIMATIONS
+        //*********************************************************//
+
+        ( function() {
+
+            if ( window.innerWidth >= 1025 ) {
+
+                $.Scrollax();
+            }
+
+        } () );
+
+
+        //*********************************************************//
+        //MOUSE OVER ANIMATIONS
+        //*********************************************************//
+
+        ( function() {
+
+            if ( window.innerWidth >= 1025 ) {
+
+                $( '[ data-tilt-animation ]' ).tilt( {
+                    maxTilt: 7,
+                    transition: true,
+                    speed: 1000,
+                } );
+            }
+
+        } () );
+
 
     } ( jQuery ) );
 

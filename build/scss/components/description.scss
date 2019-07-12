@@ -21,6 +21,18 @@
         bottom: 0;
         background-image: linear-gradient(to bottom, rgba(0,0,0,0), transparentize(#161e3d, .5));
     }
+    overflow: hidden;
+}
+.description__bg {
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
 }
 .description__box {
     width: 50%;

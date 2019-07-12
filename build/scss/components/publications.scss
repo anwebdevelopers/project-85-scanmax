@@ -136,6 +136,9 @@
             grid-row: span 2;
         }
     }
+    .publications__item-date {
+        margin-bottom: auto;
+    }
 }
 .publications__item-img {
     position: absolute;
@@ -164,7 +167,7 @@
     }
 }
 .publications__item-date {
-    margin-bottom: auto;
+
     padding-bottom: 2rem;
     opacity: .5;
 
