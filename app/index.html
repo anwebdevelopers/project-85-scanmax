@@ -883,7 +883,7 @@
 				</div>
 				<div class="footer__bottom">
 					<div class="footer__copy">© ScanMax, 2014-2019</div>
-					<div class="footer__author">Дизайн и разработка сайта — <a href="#">Beltechsoft</a></div>
+					<div class="footer__author"></div>
 				</div>
 			</div>
 		</div>
@@ -891,15 +891,59 @@
 
 	<div hidden>
 
+		<!--*****************************************************************-->
+		<!-- НАЧАЛО: ПРИМЕРЫ СТИЛИЗАЦИИ ПОПАПОВ -->
+		<!--*****************************************************************-->
+
+		<!--*****************************************************************-->
+		<!-- НЕ ЗАПОЛНЕНО ОБЯЗАТЕЛЬНОЕ ПОЛЕ -->
+		<!--*****************************************************************-->
+		<a href="#callback-NOT-FILLED" data-fancybox="callback-NOT-FILLED"></a>
+		<form id="callback-NOT-FILLED" class="popup">
+			<div class="popup__title">закажите обратный звонок </div>
+			<label class="popup__field form__field form__field_style_error">
+				<span>Имя *</span>
+				<input type="text" placeholder="Максим Николаевич" required>
+			</label>
+
+			<label class="popup__field form__field">
+				<span>Телефон *</span>
+				<input type="tel" placeholder="+7 (123) 321-21-21" required>
+			</label>
+			<div class="popup__text popup__text_style_error">Заполните обязательные поля</div>
+			<div class="popup__text">Нажимая кнопку «Отправить» я  даю согласие
+				на обработку персональных данных</div>
+			<div class="popup__button">
+				<button type="submit" class="button">
+					<span class="button__text">перезвоните мне</span>
+					<span class="button__icon">
+						<svg><use href="#icon-arrow-right"></use></svg>
+					</span>
+				</button>
+			</div>
+		</form>
+
+		<!--*****************************************************************-->
+		<!-- ФОРМА ОТПРАВЛЕНА -->
+		<!--*****************************************************************-->
+		<a href="#callback-SUBMITED" data-fancybox="callback-SUBMITED"></a>
+		<form id="callback-SUBMITED" class="popup">
+			<div class="popup__title">Ваше сообщение отправлено</div>
+			<div class="popup__text">В ближайшее время наш сотрудник свяжется с вами для уточнения деталей. Уточнить информацию можно по телефону:  +7 (495) 926-08-45 или info@scanmax.ru»</div>
+		</form>
+		<!--*****************************************************************-->
+		<!-- НАЧАЛО: ПРИМЕРЫ СТИЛИЗАЦИИ ПОПАПОВ -->
+		<!--*****************************************************************-->
+
 		<form id="callback" class="popup">
 			<div class="popup__title">закажите обратный звонок </div>
 			<label class="popup__field form__field">
-				<span>Имя</span>
-				<input type="text" placeholder="Максим Николаевич">
+				<span>Имя *</span>
+				<input type="text" placeholder="Максим Николаевич" required>
 			</label>
 			<label class="popup__field form__field">
-				<span>Телефон</span>
-				<input type="tel" placeholder="+7 (123) 321-21-21">
+				<span>Телефон *</span>
+				<input type="tel" placeholder="+7 (123) 321-21-21" required>
 			</label>
 			<div class="popup__text">Нажимая кнопку «Отправить» я  даю согласие
 				на обработку персональных данных</div>

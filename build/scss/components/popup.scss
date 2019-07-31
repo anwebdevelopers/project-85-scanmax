@@ -4,6 +4,13 @@
     width: 100%;
     padding: 7rem 6.5rem;
     background-color: #fff;
+    &.popup_style_wide {
+        max-width: 64rem;
+        padding: 7rem 4rem;
+    }
+    >*:first-child {
+        margin-top: 0;
+    }
 }
 .popup__title {
     font-size: 3.6rem;
@@ -35,11 +42,38 @@
         }
     }
 }
+.popup__table {
+    margin-top: 2.5rem;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    font-size: 1.4rem;
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+        width: 100%;
+        tr {
+            th,td  {
+                padding: .5rem;
+                text-align: center;
+            }
+            td {
+
+                img {
+                    max-width: 100%;
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+
+    }
+}
 .form__field {
     display: block;
 
 
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     span {
         display: inline-block;
         position: relative;
@@ -76,6 +110,12 @@
     textarea {
         min-height: 13rem;
         resize: vertical;
+    }
+    &.form__field_style_error {
+        input,
+        textarea {
+            border-color: $color-accent;
+        }
     }
 }
 .form__check {
@@ -167,11 +207,25 @@
         }
     }
 }
+.popup__buttons {
+    margin: 2rem -1rem -1rem -1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .button {
+        flex: 0 1 auto;
+        margin: 1rem;
+    }
+}
 .popup__text {
     margin-top: 3rem;
     font-size: 1.4rem;
     line-height: 1.5;
     text-align: center;
+    &.popup__text_style_error {
+        color: $color-accent;
+    }
 }
 
 .popup__search {
@@ -218,6 +272,10 @@
 @media only screen and (max-width : 640px) {
     .popup__title {
         font-size: 2.4rem;
+    }
+    .popup__buttons {
+        flex-direction: column;
+        align-items: center;
     }
 }
 

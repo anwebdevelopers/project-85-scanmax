@@ -45,22 +45,22 @@
                 <div class="header__stick">
                     <a href="#" class="header__stick-link header__stick-link_style_basket" data-count="30">
                         <svg>
-                            <use href="#icon-basket">
+                            <use href="#icon-basket"></use>
                         </svg>
                     </a>
                     <a href="#callback" data-fancybox="callback" class="header__stick-link">
                         <svg>
-                            <use href="#icon-phone">
+                            <use href="#icon-phone"></use>
                         </svg>
                     </a>
                     <a href="#feedback" data-fancybox="feedback" class="header__stick-link">
                         <svg>
-                            <use href="#icon-pen">
+                            <use href="#icon-pen"></use>
                         </svg>
                     </a>
                     <a href="#search" data-fancybox="search" class="header__stick-link">
                         <svg>
-                            <use href="#icon-loupe">
+                            <use href="#icon-loupe"></use>
                         </svg>
                     </a>
                 </div>
@@ -270,7 +270,7 @@
                                     <div class="goods__item-price-actual">230 478 &#8381;</div>
                                 </div>
                                 <div class="goods__item-button">
-                                    <a href="#" class="button button_style_minimal">
+                                    <a href="#basket" data-fancybox class="button button_style_minimal">
                                         <span class="button__text">купить</span>
                                         <span class="button__icon">
                                             <svg><use href="#icon-basket"/></svg>
@@ -312,7 +312,7 @@
                                     <div class="goods__item-price-actual">По запросу</div>
                                 </div>
                                 <div class="goods__item-button">
-                                    <a href="#" class="button button_style_minimal">
+                                    <a href="#request" data-fancybox class="button button_style_minimal">
                                         <span class="button__text">запросить</span>
                                         <span class="button__icon">
                                             <svg><use href="#icon-order"/></svg>
@@ -396,7 +396,7 @@
                                     <div class="goods__item-price-actual">230 478 &#8381;</div>
                                 </div>
                                 <div class="goods__item-button">
-                                    <a href="#" class="button button_style_minimal">
+                                    <a href="#basket" data-fancybox class="button button_style_minimal">
                                         <span class="button__text">купить</span>
                                         <span class="button__icon">
                                             <svg><use href="#icon-basket"/></svg>
@@ -438,7 +438,7 @@
                                     <div class="goods__item-price-actual">По запросу</div>
                                 </div>
                                 <div class="goods__item-button">
-                                    <a href="#" class="button button_style_minimal">
+                                    <a href="#request" data-fancybox class="button button_style_minimal">
                                         <span class="button__text">запросить</span>
                                         <span class="button__icon">
                                             <svg><use href="#icon-order"/></svg>
@@ -625,13 +625,74 @@
             </div>
             <div class="footer__bottom">
                 <div class="footer__copy">© ScanMax, 2014-2019</div>
-                <div class="footer__author">Дизайн и разработка сайта — <a href="#">Beltechsoft</a></div>
+                <div class="footer__author"></div>
             </div>
         </div>
     </div>
 </footer>
 
 <div hidden>
+
+    <form id="basket" class="popup popup_style_wide">
+        <div class="popup__text">Вы можете перейти в корзину для оформления заказа, чтобы продолжить покупки просто закройте это окно</div>
+        <div class="popup__table">
+            <table>
+                <tr>
+                    <th>Фото</th>
+                    <th>Название</th>
+                    <th>Колличество</th>
+                    <th>Цена</th>
+                </tr>
+                <tr>
+                    <td><img src="img/img-goods-basket.png" alt="" width="60"></td>
+                    <td>GNSS приемники Trimble R2</td>
+                    <td>1</td>
+                    <td>230 478</td>
+                </tr>
+            </table>
+        </div>
+        <div class="popup__buttons">
+            <a href="#"class="button">
+                <span class="button__text">&#8592; Продолжить покупки</span>
+            </a>
+            <a href="#"class="button">
+                <span class="button__text">Перейти в корзину &#8594;</span>
+            </a>
+        </div>
+    </form>
+
+    <form id="request" class="popup">
+        <div class="popup__title">Заказ товара</div>
+        <div class="popup__subtitle">GNSS приемники Trimble R2 </div>
+        <label class="popup__field form__field">
+            <span>Имя *</span>
+            <input type="text" placeholder="Максим Николаевич" required>
+        </label>
+        <label class="popup__field form__field">
+            <span>E-mail *</span>
+            <input type="email" placeholder="some@mail.com" required>
+        </label>
+        <label class="popup__field form__field">
+            <span>Телефон *</span>
+            <input type="tel" placeholder="+7 (123) 321-21-21" required>
+        </label>
+        <label class="popup__field form__field">
+            <span>Комментарий</span>
+            <textarea></textarea>
+        </label>
+        <label class="popup__field form__check">
+            <input type="checkbox" checked required>
+            <span>Согласен на обработку персональных данных</span>
+        </label>
+        <div class="popup__button">
+            <button type="submit" class="button">
+                <span class="button__text">Отправить</span>
+                <span class="button__icon">
+						<svg><use href="#icon-arrow-right"></use></svg>
+					</span>
+            </button>
+        </div>
+    </form>
 
     <form id="callback" class="popup">
         <div class="popup__title">закажите обратный звонок</div>

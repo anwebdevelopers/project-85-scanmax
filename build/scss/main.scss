@@ -102,7 +102,7 @@ body {
     -webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-	//overflow-x: hidden;
+	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 .container {
@@ -291,12 +291,15 @@ body {
 		padding: 0;
 	    list-style: none;
 	    li {
-	        padding: 0 0 0 2rem;
+	        padding: 0 0 0 2.5rem;
 	        background-image: radial-gradient($color-main, $color-main);
-	        background-position: 0 .8em;
+	        background-position: .5rem .8em;
 	        background-size: 4px 4px;
 	        background-repeat: no-repeat;
 	    }
+	}
+	ol {
+		padding: 0 0 0 2.5rem;
 	}
 	a:not( [ class ] ) {
 		text-decoration: none;

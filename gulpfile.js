@@ -116,8 +116,8 @@ gulp.task( 'styles', () => {
 
 gulp.task( 'scripts', () => {
     return gulp.src( [
-        'app/libs/cssrelpreload/cssrelpreload.js',
-        'app/libs/IntersectionObserver/IntersectionObserver.js',
+        // 'app/libs/cssrelpreload/cssrelpreload.js',
+        // 'app/libs/IntersectionObserver/IntersectionObserver.js',
         'app/libs/jquery-3.4.0/jquery-3.4.0.min.js',
         'app/libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js',
         'app/libs/fancybox/dist/jquery.fancybox.js',

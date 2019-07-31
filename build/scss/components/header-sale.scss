@@ -1,7 +1,8 @@
-
-.header__sale-box {
-    margin-top: 14rem;
+.header__sale {
     margin-bottom: -17rem;
+}
+.header__sale-box {
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -180,8 +181,11 @@
 }
 
 @media only screen and (max-width : 1280px) {
+    .header__sale {
+        margin-bottom: -2rem;
+    }
     .header__sale-box {
-        margin: 14rem -4.4% -2rem -4.4%;
+        margin: 0 -4.4%;
     }
     .header__sale-item-content {
         max-width: calc(80% + 3rem);
@@ -212,10 +216,11 @@
 }
 
 @media only screen and (max-width : 768px) {
-
+    .header__sale {
+        margin-bottom: -1px;
+    }
     .header__sale-box {
         display: block;
-        margin-bottom: -1px;
     }
     .header__sale-item {
         width: auto;
